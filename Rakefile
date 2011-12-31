@@ -3,6 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
-require 'rake/testtask'
-require 'rdoc/task'
+
+
 Enki::Application.load_tasks

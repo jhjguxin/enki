@@ -19,6 +19,9 @@ h2. Quick Start
   # On Mac OS X: no action required
 
   rake db:migrate
+  #may be here will display some 'WARNING' message,but it no effect with rails's wrok,like
+  <pre>WARNING: 'require 'rake/rdoctask'' is deprecated.  Please use 'require 'rdoc/task' (in RDoc 2.4.2+)' instead.
+</pre>
   rake            # Run tests
   rails server    # Start the server
   # Load http://localhost:3000/admin in your browser</code></pre>
