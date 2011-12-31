@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../../Rakefile~.html">Rakefile~</a>
+  
+    <li class="file"><a href="../../../public/robots_txt.html">robots</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/acts_as_taggable_on_steroids/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/acts_as_taggable_on_steroids/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/acts_as_taggable_on_steroids/README.html">README</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/open_id_authentication/README.html">README</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/verification/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/verification/README.html">README</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/verification/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../../vendor/plugins/verification/Rakefile~.html">Rakefile~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Admin.html">Admin</a>
+  
+    <li><a href="../../../Admin/BaseController.html">Admin::BaseController</a>
+  
+    <li><a href="../../../Admin/CommentsController.html">Admin::CommentsController</a>
+  
+    <li><a href="../../../Admin/DashboardController.html">Admin::DashboardController</a>
+  
+    <li><a href="../../../Admin/HealthController.html">Admin::HealthController</a>
+  
+    <li><a href="../../../Admin/NavigationHelper.html">Admin::NavigationHelper</a>
+  
+    <li><a href="../../../Admin/PagesController.html">Admin::PagesController</a>
+  
+    <li><a href="../../../Admin/PostsController.html">Admin::PostsController</a>
+  
+    <li><a href="../../../Admin/SessionsController.html">Admin::SessionsController</a>
+  
+    <li><a href="../../../Admin/UndoItemsController.html">Admin::UndoItemsController</a>
+  
+    <li><a href="../../../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../../../ActiveRecord/Acts.html">ActiveRecord::Acts</a>
+  
+    <li><a href="../../../ActiveRecord/Acts/Taggable.html">ActiveRecord::Acts::Taggable</a>
+  
+    <li><a href="../../../ActiveRecord/Acts/Taggable/ClassMethods.html">ActiveRecord::Acts::Taggable::ClassMethods</a>
+  
+    <li><a href="../../../ActiveRecord/Acts/Taggable/InstanceMethods.html">ActiveRecord::Acts::Taggable::InstanceMethods</a>
+  
+    <li><a href="../../../ActiveRecord/Acts/Taggable/SingletonMethods.html">ActiveRecord::Acts::Taggable::SingletonMethods</a>
+  
+    <li><a href="../../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../../ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="../../../ActionController/Verification.html">ActionController::Verification</a>
+  
+    <li><a href="../../../ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
+  
+    <li><a href="../../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../../ActionView/Helpers.html">ActionView::Helpers</a>
+  
+    <li><a href="../../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a>
+  
+    <li><a href="../../../CoreExtensions.html">CoreExtensions</a>
+  
+    <li><a href="../../../CoreExtensions/Object.html">CoreExtensions::Object</a>
+  
+    <li><a href="../../../CoreExtensions/String.html">CoreExtensions::String</a>
+  
+    <li><a href="../../../Enki.html">Enki</a>
+  
+    <li><a href="../../../Enki/Application.html">Enki::Application</a>
+  
+    <li><a href="../../../Enki/Config.html">Enki::Config</a>
+  
+    <li><a href="../../../ExceptionNotifier.html">ExceptionNotifier</a>
+  
+    <li><a href="../../../ExceptionNotifier/Notifier.html">ExceptionNotifier::Notifier</a>
+  
+    <li><a href="../../../ExceptionNotifier/Notifier/MissingController.html">ExceptionNotifier::Notifier::MissingController</a>
+  
+    <li><a href="../../../OpenIdAuthentication.html">OpenIdAuthentication</a>
+  
+    <li><a href="../../../OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
+  
+    <li><a href="../../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../../ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
+  
+    <li><a href="../../../ActsAsTaggableMigrationGenerator.html">ActsAsTaggableMigrationGenerator</a>
+  
+    <li><a href="../../../ActsAsTaggableOnSteroidsFormTest.html">ActsAsTaggableOnSteroidsFormTest</a>
+  
+    <li><a href="../../../ActsAsTaggableOnSteroidsTest.html">ActsAsTaggableOnSteroidsTest</a>
+  
+    <li><a href="../../../AddIndexes.html">AddIndexes</a>
+  
+    <li><a href="../../../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../../../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../../../ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="../../../BeValidHtml5.html">BeValidHtml5</a>
+  
+    <li><a href="../../../BeValidXhtml.html">BeValidXhtml</a>
+  
+    <li><a href="../../../Comment.html">Comment</a>
+  
+    <li><a href="../../../CommentActivity.html">CommentActivity</a>
+  
+    <li><a href="../../../CommentsController.html">CommentsController</a>
+  
+    <li><a href="../../../DateHelper.html">DateHelper</a>
+  
+    <li><a href="../../../DeleteCommentUndo.html">DeleteCommentUndo</a>
+  
+    <li><a href="../../../DeletePageUndo.html">DeletePageUndo</a>
+  
+    <li><a href="../../../DeletePostUndo.html">DeletePostUndo</a>
+  
+    <li><a href="../../../DisableFlashSweeping.html">DisableFlashSweeping</a>
+  
+    <li><a href="../../../EnkiFormatter.html">EnkiFormatter</a>
+  
+    <li><a href="../../../FormHelper.html">FormHelper</a>
+  
+    <li><a href="../../../InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="../../../Magazine.html">Magazine</a>
+  
+    <li><a href="../../../NavigationHelper.html">NavigationHelper</a>
+  
+    <li><a href="../../../NavigationHelpers.html">NavigationHelpers</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+    <li><a href="../../../Page.html">Page</a>
+  
+    <li><a href="../../../PageTitleHelper.html">PageTitleHelper</a>
+  
+    <li><a href="../../../PagesController.html">PagesController</a>
+  
+    <li><a href="../../../Photo.html">Photo</a>
+  
+    <li><a href="../../../Post.html">Post</a>
+  
+    <li><a href="../../../PostsController.html">PostsController</a>
+  
+    <li><a href="../../../PostsHelper.html">PostsHelper</a>
+  
+    <li><a href="../../../RemoveOpenidAuthorityFromComment.html">RemoveOpenidAuthorityFromComment</a>
+  
+    <li><a href="../../../SpecialPhoto.html">SpecialPhoto</a>
+  
+    <li><a href="../../../SpecialPost.html">SpecialPost</a>
+  
+    <li><a href="../../../Stats.html">Stats</a>
+  
+    <li><a href="../../../Subscription.html">Subscription</a>
+  
+    <li><a href="../../../Tag.html">Tag</a>
+  
+    <li><a href="../../../TagHelper.html">TagHelper</a>
+  
+    <li><a href="../../../TagList.html">TagList</a>
+  
+    <li><a href="../../../TagListTest.html">TagListTest</a>
+  
+    <li><a href="../../../TagTest.html">TagTest</a>
+  
+    <li><a href="../../../TaggingTest.html">TaggingTest</a>
+  
+    <li><a href="../../../TagsHelper.html">TagsHelper</a>
+  
+    <li><a href="../../../TagsHelperTest.html">TagsHelperTest</a>
+  
+    <li><a href="../../../UndoFailed.html">UndoFailed</a>
+  
+    <li><a href="../../../UndoItem.html">UndoItem</a>
+  
+    <li><a href="../../../UrlHelper.html">UrlHelper</a>
+  
+    <li><a href="../../../User.html">User</a>
+  
+    <li><a href="../../../VerificationTest.html">VerificationTest</a>
+  
+    <li><a href="../../../VerificationTestController.html">VerificationTestController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p><a href="../../../OpenIdAuthentication.html">OpenIdAuthentication</a></p>
+
+<h6 id="label-"></h6>
+
+<p>Provides a thin wrapper around the excellent ruby-openid gem from JanRan.
+Be sure to install that first:</p>
+
+<pre>gem install ruby-openid</pre>
+
+<p>To understand what OpenID is about and how it works, it helps to read the
+documentation for lib/openid/consumer.rb from that gem.</p>
+
+<p>The specification used is <a
+href="http://openid.net/specs/openid-authentication-2_0.html.">openid.net/specs/openid-authentication-2_0.html.</a></p>
+
+<p>Prerequisites</p>
+
+<h6 id="label-"></h6>
+
+<p>OpenID authentication uses the session, so be sure that you haven’t
+turned that off.</p>
+
+<p>Alternatively, you can use the file-based store, which just relies on on
+tmp/openids being present in RAILS_ROOT. But be aware that this store only
+works if you have a single application server. And it’s not safe to use
+across NFS. It’s recommended that you use the database store if at all
+possible. To use the file-based store, you’ll also have to add this line
+to your config/environment.rb:</p>
+
+<pre>OpenIdAuthentication.store = :file</pre>
+
+<p>This particular plugin also relies on the fact that the authentication
+action allows for both POST and GET operations. If you’re using RESTful
+authentication, you’ll need to explicitly allow for this in your
+routes.rb.</p>
+
+<p>The plugin also expects to find a root_url method that points to the home
+page of your site. You can accomplish this by using a root route in
+config/routes.rb:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">root</span> :<span class="ruby-identifier">controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'articles'</span>
+</pre>
+
+<p>This plugin relies on Rails Edge revision 6317 or newer.</p>
+
+<p>Example</p>
+
+<h6 id="label-"></h6>
+
+<p>This example is just to meant to demonstrate how you could use OpenID
+authentication. You might well want to add salted hash logins instead of
+plain text passwords and other requirements on top of this. Treat it as a
+starting point, not a destination.</p>
+
+<p>Note that the <a href="../../../User.html">User</a> model referenced in the
+simple example below has an ‘identity_url’ attribute. You will want to
+add the same or similar field to whatever model you are using for
+authentication.</p>
+
+<p>Also of note is the following code block used in the example below:</p>
+
+<pre class="ruby"><span class="ruby-identifier">authenticate_with_open_id</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>In the above code block, ‘identity_url’ will need to match
+user.identity_url exactly. ‘identity_url’ will be a string in the form
+of ‘<a href="http://example.com">example.com</a>’ - If you are storing
+just ‘example.com’ with your user, the lookup will fail.</p>
+
+<p>There is a handy method in this plugin called ‘normalize_url’ that will
+help with validating OpenID URLs.</p>
+
+<pre>OpenIdAuthentication.normalize_url(user.identity_url)</pre>
+
+<p>The above will return a standardized version of the OpenID URL - the above
+called with ‘example.com’ will return ‘<a
+href="http://example.com/">example.com/</a>’ It will also raise an
+InvalidOpenId exception if the URL is determined to not be valid. Use the
+above code in your <a href="../../../User.html">User</a> model and validate
+OpenID URLs before saving them.</p>
+
+<p>config/routes.rb</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">root</span> :<span class="ruby-identifier">controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'articles'</span>
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> :<span class="ruby-identifier">session</span>
+</pre>
+
+<p>app/views/sessions/new.erb</p>
+
+<pre>&lt;% form_tag(session_url) do %&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;name&quot;&gt;Username:&lt;/label&gt;
+    &lt;%= text_field_tag &quot;name&quot; %&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for=&quot;password&quot;&gt;Password:&lt;/label&gt;
+    &lt;%= password_field_tag %&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    ...or use:
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label for=&quot;openid_identifier&quot;&gt;OpenID:&lt;/label&gt;
+    &lt;%= text_field_tag &quot;openid_identifier&quot; %&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;%= submit_tag 'Sign in', :disable_with =&gt; &quot;Signing in&amp;hellip;&quot; %&gt;
+  &lt;/p&gt;
+&lt;% end %&gt;</pre>
+
+<p>app/controllers/sessions_controller.rb</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">SessionsController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">using_open_id?</span>
+      <span class="ruby-identifier">open_id_authentication</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">password_authentication</span>(<span class="ruby-identifier">params</span>[:<span class="ruby-identifier">name</span>], <span class="ruby-identifier">params</span>[:<span class="ruby-identifier">password</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">protected</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">password_authentication</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">password</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_user</span> = <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">params</span>[:<span class="ruby-identifier">name</span>], <span class="ruby-identifier">params</span>[:<span class="ruby-identifier">password</span>])
+        <span class="ruby-identifier">successful_login</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Sorry, that username/password doesn't work&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_id_authentication</span>
+      <span class="ruby-identifier">authenticate_with_open_id</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">successful?</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_user</span> = <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find_by_identity_url</span>(<span class="ruby-identifier">identity_url</span>)
+            <span class="ruby-identifier">successful_login</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">failed_login</span> <span class="ruby-node">&quot;Sorry, no user by that identity URL exists (#{identity_url})&quot;</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">failed_login</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">message</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">private</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">successful_login</span>
+      <span class="ruby-identifier">session</span>[:<span class="ruby-identifier">user_id</span>] = <span class="ruby-ivar">@current_user</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">root_url</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">failed_login</span>(<span class="ruby-identifier">message</span>)
+      <span class="ruby-identifier">flash</span>[:<span class="ruby-identifier">error</span>] = <span class="ruby-identifier">message</span>
+      <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">new_session_url</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>If you’re fine with the result messages above and don’t need individual
+logic on a per-failure basis, you can collapse the case into a mere
+boolean:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">open_id_authentication</span>
+  <span class="ruby-identifier">authenticate_with_open_id</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@current_user</span> = <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find_by_identity_url</span>(<span class="ruby-identifier">identity_url</span>)
+      <span class="ruby-identifier">successful_login</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">failed_login</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;Sorry, no user by that identity URL exists (#{identity_url})&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Simple Registration OpenID Extension</p>
+
+<h6 id="label-"></h6>
+
+<p>Some OpenID Providers support this lightweight profile exchange protocol. 
+See more: <a
+href="http://www.openidenabled.com/openid/simple-registration-extension">www.openidenabled.com/openid/simple-registration-extension</a></p>
+
+<p>You can support it in your app by changing open_id_authentication</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">open_id_authentication</span>(<span class="ruby-identifier">identity_url</span>)
+  <span class="ruby-comment"># Pass optional :required and :optional keys to specify what sreg fields you want.</span>
+  <span class="ruby-comment"># Be sure to yield registration, a third argument in the #authenticate_with_open_id block.</span>
+  <span class="ruby-identifier">authenticate_with_open_id</span>(<span class="ruby-identifier">identity_url</span>,
+      :<span class="ruby-identifier">required</span> =<span class="ruby-operator">&gt;</span> [ :<span class="ruby-identifier">nickname</span>, :<span class="ruby-identifier">email</span> ],
+      :<span class="ruby-identifier">optional</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">fullname</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span>, <span class="ruby-identifier">registration</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">status</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-identifier">missing</span>
+      <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Sorry, the OpenID server couldn't be found&quot;</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-identifier">invalid</span>
+      <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Sorry, but this does not appear to be a valid OpenID&quot;</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-identifier">canceled</span>
+      <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;OpenID verification was canceled&quot;</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-identifier">failed</span>
+      <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Sorry, the OpenID verification failed&quot;</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-identifier">successful</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_user</span> = <span class="ruby-ivar">@account</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find_by_identity_url</span>(<span class="ruby-identifier">identity_url</span>)
+        <span class="ruby-identifier">assign_registration_attributes!</span>(<span class="ruby-identifier">registration</span>)
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">save</span>
+          <span class="ruby-identifier">successful_login</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Your OpenID profile registration failed: &quot;</span> <span class="ruby-operator">+</span>
+            <span class="ruby-ivar">@current_user</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>.<span class="ruby-identifier">to_sentence</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">failed_login</span> <span class="ruby-string">&quot;Sorry, no user by that identity URL exists&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># registration is a hash containing the valid sreg keys given above</span>
+<span class="ruby-comment"># use this to map them to fields of your user model</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assign_registration_attributes!</span>(<span class="ruby-identifier">registration</span>)
+  <span class="ruby-identifier">model_to_registration_mapping</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">model_attribute</span>, <span class="ruby-identifier">registration_attribute</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">registration</span>[<span class="ruby-identifier">registration_attribute</span>].<span class="ruby-identifier">blank?</span>
+      <span class="ruby-ivar">@current_user</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{model_attribute}=&quot;</span>, <span class="ruby-identifier">registration</span>[<span class="ruby-identifier">registration_attribute</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">model_to_registration_mapping</span>
+  { :<span class="ruby-identifier">login</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'nickname'</span>, :<span class="ruby-identifier">email</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'email'</span>, :<span class="ruby-identifier">display_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'fullname'</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Attribute Exchange OpenID Extension</p>
+
+<h6 id="label-"></h6>
+
+<p>Some OpenID providers also support the OpenID AX (attribute exchange)
+protocol for exchanging identity information between endpoints.  See more:
+<a
+href="http://openid.net/specs/openid-attribute-exchange-1_0.html">openid.net/specs/openid-attribute-exchange-1_0.html</a></p>
+
+<p>Accessing AX data is very similar to the Simple Registration process,
+described above – just add the URI identifier for the AX field to your
+:optional or :required parameters.  For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">authenticate_with_open_id</span>(<span class="ruby-identifier">identity_url</span>,
+    :<span class="ruby-identifier">required</span> =<span class="ruby-operator">&gt;</span> [ :<span class="ruby-identifier">email</span>, <span class="ruby-string">'http://schema.openid.net/birthDate'</span> ]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span>, <span class="ruby-identifier">registration</span><span class="ruby-operator">|</span>
+</pre>
+
+<p>This would provide the sreg data for :email, and the AX data for ‘<a
+href="http://schema.openid.net/birthDate">schema.openid.net/birthDate</a>’</p>
+
+<p>Copyright © 2007 David Heinemeier Hansson, released under the MIT license</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

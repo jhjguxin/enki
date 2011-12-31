@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class VerificationTestController - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>vendor/plugins/verification/test/verification_test.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActionController::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-guarded_by_method">#guarded_by_method</a>
+    
+    <li><a href="#method-i-guarded_by_not_xhr">#guarded_by_not_xhr</a>
+    
+    <li><a href="#method-i-guarded_by_xhr">#guarded_by_xhr</a>
+    
+    <li><a href="#method-i-guarded_in_session">#guarded_in_session</a>
+    
+    <li><a href="#method-i-guarded_one">#guarded_one</a>
+    
+    <li><a href="#method-i-guarded_one_for_named_route_test">#guarded_one_for_named_route_test</a>
+    
+    <li><a href="#method-i-guarded_two">#guarded_two</a>
+    
+    <li><a href="#method-i-guarded_with_back">#guarded_with_back</a>
+    
+    <li><a href="#method-i-guarded_with_flash">#guarded_with_flash</a>
+    
+    <li><a href="#method-i-multi_one">#multi_one</a>
+    
+    <li><a href="#method-i-multi_two">#multi_two</a>
+    
+    <li><a href="#method-i-must_be_post">#must_be_post</a>
+    
+    <li><a href="#method-i-no_default_action">#no_default_action</a>
+    
+    <li><a href="#method-i-two_redirects">#two_redirects</a>
+    
+    <li><a href="#method-i-unconditional_redirect">#unconditional_redirect</a>
+    
+    <li><a href="#method-i-unguarded">#unguarded</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./Rakefile~.html">Rakefile~</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./vendor/plugins/open_id_authentication/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/verification/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/verification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/verification/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/verification/Rakefile~.html">Rakefile~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Admin.html">Admin</a>
+  
+    <li><a href="./Admin/BaseController.html">Admin::BaseController</a>
+  
+    <li><a href="./Admin/CommentsController.html">Admin::CommentsController</a>
+  
+    <li><a href="./Admin/DashboardController.html">Admin::DashboardController</a>
+  
+    <li><a href="./Admin/HealthController.html">Admin::HealthController</a>
+  
+    <li><a href="./Admin/NavigationHelper.html">Admin::NavigationHelper</a>
+  
+    <li><a href="./Admin/PagesController.html">Admin::PagesController</a>
+  
+    <li><a href="./Admin/PostsController.html">Admin::PostsController</a>
+  
+    <li><a href="./Admin/SessionsController.html">Admin::SessionsController</a>
+  
+    <li><a href="./Admin/UndoItemsController.html">Admin::UndoItemsController</a>
+  
+    <li><a href="./ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="./ActiveRecord/Acts.html">ActiveRecord::Acts</a>
+  
+    <li><a href="./ActiveRecord/Acts/Taggable.html">ActiveRecord::Acts::Taggable</a>
+  
+    <li><a href="./ActiveRecord/Acts/Taggable/ClassMethods.html">ActiveRecord::Acts::Taggable::ClassMethods</a>
+  
+    <li><a href="./ActiveRecord/Acts/Taggable/InstanceMethods.html">ActiveRecord::Acts::Taggable::InstanceMethods</a>
+  
+    <li><a href="./ActiveRecord/Acts/Taggable/SingletonMethods.html">ActiveRecord::Acts::Taggable::SingletonMethods</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="./ActionController/Verification.html">ActionController::Verification</a>
+  
+    <li><a href="./ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
+  
+    <li><a href="./ActionView.html">ActionView</a>
+  
+    <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
+  
+    <li><a href="./ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a>
+  
+    <li><a href="./CoreExtensions.html">CoreExtensions</a>
+  
+    <li><a href="./CoreExtensions/Object.html">CoreExtensions::Object</a>
+  
+    <li><a href="./CoreExtensions/String.html">CoreExtensions::String</a>
+  
+    <li><a href="./Enki.html">Enki</a>
+  
+    <li><a href="./Enki/Application.html">Enki::Application</a>
+  
+    <li><a href="./Enki/Config.html">Enki::Config</a>
+  
+    <li><a href="./ExceptionNotifier.html">ExceptionNotifier</a>
+  
+    <li><a href="./ExceptionNotifier/Notifier.html">ExceptionNotifier::Notifier</a>
+  
+    <li><a href="./ExceptionNotifier/Notifier/MissingController.html">ExceptionNotifier::Notifier::MissingController</a>
+  
+    <li><a href="./OpenIdAuthentication.html">OpenIdAuthentication</a>
+  
+    <li><a href="./OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
+  
+    <li><a href="./ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="./ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
+  
+    <li><a href="./ActsAsTaggableMigrationGenerator.html">ActsAsTaggableMigrationGenerator</a>
+  
+    <li><a href="./ActsAsTaggableOnSteroidsFormTest.html">ActsAsTaggableOnSteroidsFormTest</a>
+  
+    <li><a href="./ActsAsTaggableOnSteroidsTest.html">ActsAsTaggableOnSteroidsTest</a>
+  
+    <li><a href="./AddIndexes.html">AddIndexes</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="./BeValidHtml5.html">BeValidHtml5</a>
+  
+    <li><a href="./BeValidXhtml.html">BeValidXhtml</a>
+  
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./CommentActivity.html">CommentActivity</a>
+  
+    <li><a href="./CommentsController.html">CommentsController</a>
+  
+    <li><a href="./DateHelper.html">DateHelper</a>
+  
+    <li><a href="./DeleteCommentUndo.html">DeleteCommentUndo</a>
+  
+    <li><a href="./DeletePageUndo.html">DeletePageUndo</a>
+  
+    <li><a href="./DeletePostUndo.html">DeletePostUndo</a>
+  
+    <li><a href="./DisableFlashSweeping.html">DisableFlashSweeping</a>
+  
+    <li><a href="./EnkiFormatter.html">EnkiFormatter</a>
+  
+    <li><a href="./FormHelper.html">FormHelper</a>
+  
+    <li><a href="./InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="./Magazine.html">Magazine</a>
+  
+    <li><a href="./NavigationHelper.html">NavigationHelper</a>
+  
+    <li><a href="./NavigationHelpers.html">NavigationHelpers</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Page.html">Page</a>
+  
+    <li><a href="./PageTitleHelper.html">PageTitleHelper</a>
+  
+    <li><a href="./PagesController.html">PagesController</a>
+  
+    <li><a href="./Photo.html">Photo</a>
+  
+    <li><a href="./Post.html">Post</a>
+  
+    <li><a href="./PostsController.html">PostsController</a>
+  
+    <li><a href="./PostsHelper.html">PostsHelper</a>
+  
+    <li><a href="./RemoveOpenidAuthorityFromComment.html">RemoveOpenidAuthorityFromComment</a>
+  
+    <li><a href="./SpecialPhoto.html">SpecialPhoto</a>
+  
+    <li><a href="./SpecialPost.html">SpecialPost</a>
+  
+    <li><a href="./Stats.html">Stats</a>
+  
+    <li><a href="./Subscription.html">Subscription</a>
+  
+    <li><a href="./Tag.html">Tag</a>
+  
+    <li><a href="./TagHelper.html">TagHelper</a>
+  
+    <li><a href="./TagList.html">TagList</a>
+  
+    <li><a href="./TagListTest.html">TagListTest</a>
+  
+    <li><a href="./TagTest.html">TagTest</a>
+  
+    <li><a href="./TaggingTest.html">TaggingTest</a>
+  
+    <li><a href="./TagsHelper.html">TagsHelper</a>
+  
+    <li><a href="./TagsHelperTest.html">TagsHelperTest</a>
+  
+    <li><a href="./UndoFailed.html">UndoFailed</a>
+  
+    <li><a href="./UndoItem.html">UndoItem</a>
+  
+    <li><a href="./UrlHelper.html">UrlHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./VerificationTest.html">VerificationTest</a>
+  
+    <li><a href="./VerificationTestController.html">VerificationTestController</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class VerificationTestController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-guarded_by_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_by_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_by_method-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_by_method</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.method}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_by_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_by_method-method -->
+
+    
+      <div id="method-i-guarded_by_not_xhr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_by_not_xhr</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_by_not_xhr-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_by_not_xhr</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.xhr?}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_by_not_xhr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_by_not_xhr-method -->
+
+    
+      <div id="method-i-guarded_by_xhr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_by_xhr</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_by_xhr-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_by_xhr</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.xhr?}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_by_xhr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_by_xhr-method -->
+
+    
+      <div id="method-i-guarded_in_session" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_in_session</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_in_session-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_in_session</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;one&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_in_session-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_in_session-method -->
+
+    
+      <div id="method-i-guarded_one" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_one</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_one-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_one</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_one-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_one-method -->
+
+    
+      <div id="method-i-guarded_one_for_named_route_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_one_for_named_route_test</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_one_for_named_route_test-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_one_for_named_route_test</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_one_for_named_route_test-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_one_for_named_route_test-method -->
+
+    
+      <div id="method-i-guarded_two" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_two</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_two-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_two</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}:#{params[:two]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_two-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_two-method -->
+
+    
+      <div id="method-i-guarded_with_back" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_with_back</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_with_back-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_with_back</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_with_back-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_with_back-method -->
+
+    
+      <div id="method-i-guarded_with_flash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guarded_with_flash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="guarded_with_flash-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guarded_with_flash</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guarded_with_flash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guarded_with_flash-method -->
+
+    
+      <div id="method-i-multi_one" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">multi_one</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="multi_one-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">multi_one</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;one&quot;]}:#{session[&quot;two&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- multi_one-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- multi_one-method -->
+
+    
+      <div id="method-i-multi_two" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">multi_two</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="multi_two-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">multi_two</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;two&quot;]}:#{session[&quot;one&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- multi_two-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- multi_two-method -->
+
+    
+      <div id="method-i-must_be_post" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">must_be_post</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="must_be_post-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">must_be_post</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Was a post!&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- must_be_post-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- must_be_post-method -->
+
+    
+      <div id="method-i-no_default_action" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">no_default_action</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="no_default_action-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">no_default_action</span>
+  <span class="ruby-comment"># Will never run</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- no_default_action-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- no_default_action-method -->
+
+    
+      <div id="method-i-two_redirects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">two_redirects</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="two_redirects-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">two_redirects</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:nothing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- two_redirects-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- two_redirects-method -->
+
+    
+      <div id="method-i-unguarded" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unguarded</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unguarded-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unguarded</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unguarded-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unguarded-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-unconditional_redirect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unconditional_redirect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unconditional_redirect-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/verification/test/verification_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unconditional_redirect</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;unguarded&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unconditional_redirect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unconditional_redirect-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
