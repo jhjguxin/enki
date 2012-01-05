@@ -37,6 +37,7 @@ GEM
     activesupport (3.0.4)
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
+    bcrypt-ruby (2.1.4-java)
     bouncy-castle-java (1.5.0146.1)
     builder (2.1.2)
     capybara (1.1.2)
