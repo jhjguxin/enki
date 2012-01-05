@@ -37,7 +37,8 @@ Enki is a compact, easily extendable base for your blog. It does this by being h
 * Live comment preview should be provided by default
 * Google does search better than you or I
 * You don't need a plugin system when you've got decent source control
-* If you're not using OpenID you're a chump
+* #If you're not using OpenID you're a chump
+* Because I'm a chump,so I decide to use devise 
 * Hacking code is the easiest way to customize something
 
 h2. How it differs from Mephisto

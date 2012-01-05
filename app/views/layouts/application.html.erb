@@ -16,6 +16,9 @@
       <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
 
       <div id="main">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
         <%= yield %>
       </div>
 

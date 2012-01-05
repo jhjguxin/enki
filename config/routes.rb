@@ -1,7 +1,9 @@
 Enki::Application.routes.draw do
+  devise_for :users
+  resources :token_authentications, :only => [:create, :destroy]
+
   namespace 'admin' do
     resource :session
-
     resources :posts, :pages do
       post 'preview', :on => :collection
     end
