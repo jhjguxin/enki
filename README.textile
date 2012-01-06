@@ -6,7 +6,7 @@ Preferences are for the masses. Any real coder knows the easiest and best way to
 
 h2. Quick Start
 
-<pre><code>  git clone git://github.com/xaviershay/enki.git enki
+<pre><code>  git clone git://github.com/jhjguxin/enki.git
   cd enki
   git checkout -b myblog # Create a new work branch
   bundle install         # Install all the required gems
@@ -26,7 +26,7 @@ h2. Quick Start
   rails server    # Start the server
   # Load http://localhost:3000/admin in your browser</code></pre>
 
-Or for bonus points, fork "enki at github":http://github.com/xaviershay/enki/tree/master and clone that instead.
+Or for bonus points, fork "enki at github":https://github.com/jhjguxin/enki/commits/master and clone that instead.
 
 h2. More info
 
@@ -57,7 +57,7 @@ h2. Contributors, these guys rock
 
 <pre><code>git log | grep Author | sort | uniq</code></pre>
 
-If you want to help out, try tackling an "open issue":https://github.com/xaviershay/enki/issues. Please include specs for any fixes. Enki is by design feature light. Unless you feel very strongly your feature should be in core, add a link to your fork in the wiki instead.
+If you want to help out, try tackling an "open issue":https://github.com/jhjguxin/enki/issues. Please include specs for any fixes. Enki is by design feature light. Unless you feel very strongly your feature should be in core, add a link to your fork in the wiki instead.
 
 h2. License
 

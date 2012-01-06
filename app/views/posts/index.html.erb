@@ -6,7 +6,7 @@
 <% else -%>
 	<% @posts.each do |post| -%>
 	<div class="post post-<%= post.id %>">
-	  <%= render :partial => 'post', :locals => {:post => post} %>
+	  <%= render :partial => 'post_list', :locals => {:post => post} %>
 	</div>
 	<% end -%>
   <% if more_content? -%>

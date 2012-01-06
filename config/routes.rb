@@ -3,7 +3,7 @@ Enki::Application.routes.draw do
   resources :token_authentications, :only => [:create, :destroy]
 
   namespace 'admin' do
-    resource :session
+    #resource :session
     resources :posts, :pages do
       post 'preview', :on => :collection
     end
