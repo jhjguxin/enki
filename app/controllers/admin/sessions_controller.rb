@@ -1,5 +1,5 @@
 class Admin::SessionsController < Devise::SessionsController
-  before_filter :authenticate_user!
+#  before_filter :authenticate_user!
 
 protected
 
