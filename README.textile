@@ -64,7 +64,9 @@ h2. License
 GPL(General Public License) - See LICENSE
 
 Admin design heavily inspired by "Habari":http://www.habariproject.org/en/
+
 h2. QA
+
 Showing the devise edit password screen?
 In my rails 3 app using devise, I want to provide a link for users to edit their password.
 
