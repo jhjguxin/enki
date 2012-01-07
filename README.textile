@@ -75,6 +75,6 @@ I have a standard link that points to: /users/password/edit ... Log output below
 Redirected to http://localhost:3000/  
 Completed 302 Found in 309ms </code></pre>
 Why is rails redirecting? Why can't I show the edit password page? Thanks
-<pre><code>Devise::PasswordsController#edit</code></pre> is for non-authenticated users who wish to change their password using a reset token. This reset token was previously sent to the user in an email (Reset password instructions). If the user is already logged in, this edit password page will always redirect to the after-sign-in path since it shouldn't be accessible to authenticated users.
+<code>Devise::PasswordsController#edit</code> is for non-authenticated users who wish to change their password using a reset token. This reset token was previously sent to the user in an email (Reset password instructions). If the user is already logged in, this edit password page will always redirect to the after-sign-in path since it shouldn't be accessible to authenticated users.
 
-I suppose what you want is to allow the user to change his password after logging in. You have to use <pre><code>Devise::RegistrationsController#edit</code></pre> for that.
+I suppose what you want is to allow the user to change his password after logging in. You have to use <code>Devise::RegistrationsController#edit</code> for that.
