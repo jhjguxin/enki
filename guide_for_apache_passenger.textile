@@ -1,0 +1,60 @@
+# Install passenger and apache2
+<pre><code>sudo apt-get install apache2
+sudo gem install passengercode
+passenger-install-apache2-module
+sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
+sudo passenger-install-apache2-module
+</code></pre>
+# Get the enki
+You can by pass git clone git://github.com/jhjguxin/enki.git
+because I have No mails server,so I enable below:
+<pre><code>  # Disable delivery errors, bad email addresses will be ignored
+   config.action_mailer.raise_delivery_errors = false
+<?code></pre>
+Otherwise You will get:
+Errno::ECONNREFUSED Connection refused - connect(2)
+Creat the db file for produce environmention
+<pre><code>rake db:migrate RAILS_ENV=production</code><pre>
+If everything is ok,mv the enki folder to /var/www/
+<pre><code>sudo mv mv -Rf enki /var/www</code></pre>
+#Create the Conf file for apache
+Create the file named "enki_apache_passenger.conf" in enki's root.And follew inside
+<pre><code>
+LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11/ext/apache2/mod_passenger.so
+LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
+PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-3.0.11
+PassengerRuby /usr/bin/ruby1.8
+# PassengerMaxPoolSize 10
+<VirtualHost *:8088>
+   #ServerName www.yourhost.com
+   # <-- be sure to point to 'public'!
+   DocumentRoot /var/www/enki/public
+
+   RewriteEngine On 
+   <Directory /var/www/enki/public>
+      # <-- relax Apache security settings
+      AllowOverride all
+      # <-- MultiViews must be turned off
+      Options -MultiViews
+   </Directory>
+</VirtualHost>
+</code><pre>
+In /ect/apache2/httpd.conf add:
+<pre><code>Include /var/www/enki/enki_apache_passenger.conf</code></pre>
+In /ect/apache2/ports.conf add:
+<pre><code>NameVirtualHost *:8088
+Listen 8088
+</code></pre>
+#tweak your file/folder permissions
+You may also need to tweak your file/folder permissions. Make sure that the following folders are readable and executable by Apache:
+
+*this public folder.
+*the application’s config folder.
+*all parent folders. That is, /webapps/mycook and /webapps must also be readable and executable by Apache.
+the easiest way is type:
+<pre><code>sudo chown -Rf /var/www/enki</code></pre>
+#Enjoy It!
+<pre><code>sudo apachectl start
+#Or
+sudo apachectl -k restart
+</code></pre>
