@@ -2,12 +2,4 @@
 <div class="entrybody">
   <%= (truncate(strip_tags(post.body), :length => 300, :omission => '...')).html_safe %>
 </div>
-<div class="meta">
-  <ul>
-    <li class="date">Posted on <%= format_post_date(post.published_at) %></li>
-    <li class="comments"><%= link_to(pluralize(post.approved_comments.size, "comment"), post_path(post, :anchor => 'comments')) %></li>
-    <% unless post.tags.empty? -%>
-    <li class="tags">Tagged <%= linked_tag_list(post.tags) %></li>
-    <% end -%>
-  </ul>
-</div>
+<%= render :partial => 'posts/post_meta', :locals => {:post => post} %>

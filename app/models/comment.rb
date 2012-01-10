@@ -18,7 +18,9 @@ class Comment < ActiveRecord::Base
   end
 
   def apply_filter
-    self.body_html = Lesstile.format_as_xhtml(self.body, :code_formatter => Lesstile::CodeRayFormatter)
+    #self.body_html =Lesstile.format_as_html(self.body)
+    self.body_html =Lesstile.format_as_html(self.body, :code_formatter => Lesstile::CodeRayFormatter) # Requires coderay
+    #self.body_html =Lesstile.format_as_html(self.body, :code_formatter => lambda {|code, lang| "Code in #{lang}: #{code}" })
   end
 
   def blank_openid_fields

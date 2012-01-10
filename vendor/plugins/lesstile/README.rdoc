@@ -1,0 +1,52 @@
+= Lesstile
+
+Converts text formatted with an exceedingly simple markup language into valid HTML (iron clad guarantee!) - perfect for comments on your blog. Textile isn't good for this because not only does it do too much (do commenters really need subscript?), but it can also output invalid HTML (try a <b> tag over multiple lines...). Whitelisting HTML is another option, but you still need some sort of parsing if you want syntax highlighting.
+
+Integrates with CodeRay for sexy syntax highlighting.
+
+== Synopsis
+
+  comment = <<-EOS
+  "Ego Link":http://rhnh.net
+  Wow, this post is awesome. I'd implement it like this:
+
+  --- Ruby
+  def hello_world
+    puts "hello world!"
+  end
+  ---
+
+  --- HTML
+  <strong>Look, HTML code</strong>
+  ---
+
+  ---
+  just some normal code
+  ---
+  EOS
+
+  Lesstile.format_as_html(comment)
+  Lesstile.format_as_html(comment, :code_formatter => Lesstile::CodeRayFormatter) # Requires coderay
+  Lesstile.format_as_html(comment, :code_formatter => lambda {|code, lang| "Code in #{lang}: #{code}" })
+
+  # Also XHTML, for the old schoolers
+  Lesstile.format_as_xhtml(comment)
+
+== Status
+
+Lesstile is used by the enki blogging engine, which has many production deployments. The current release is 1.0.0 and considered stable.
+
+== Requirements
+
+Provides a CodeRay syntax highlighter, but you need to have the gem installed to use it.
+
+  gem install coderay
+
+== Install
+
+Pick one:
+
+  sudo gem install lesstile                          # gem install
+  git clone git://github.com/xaviershay/lesstile.git # go from source
+
+Tested on 1.8.7-p302, 1.9.2-p0, jruby 1.5.1, and rbx 1.1

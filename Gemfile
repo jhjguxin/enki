@@ -22,15 +22,15 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+gem 'ruby-debug'
 
 # Bundle the extra gems:
 gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
 gem 'ruby-openid', :require => 'openid'
 gem 'rack-openid', :require => 'rack/openid'
 gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
-gem 'coderay'
-gem 'lesstile'
+gem "coderay", "~> 1.0.5"
+#gem 'lesstile'
 gem 'formtastic'
 gem 'will_paginate', '= 3.0.pre2'
 gem 'devise', '~> 1.1.5'

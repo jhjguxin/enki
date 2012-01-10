@@ -23,6 +23,17 @@ class CommentsController < ApplicationController
       end
     end
   end
+  def oldcreate
+    @comment = Comment.new(params[:comment])
+    @comment.post = @post
+    if @comment.save
+      redirect_to post_path(@post)
+    else
+      #redirect_to post_path(@post), :comment=> @comment
+      #breakpoint 
+      render :template => 'posts/show'
+    end
+  end
 
   # TODO: Spec OpenID with cucumber and rack-my-id
   def create

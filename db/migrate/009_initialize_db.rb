@@ -3,9 +3,9 @@ class InitializeDb < ActiveRecord::Migration
     create_table "comments" do |t|
       t.integer  "post_id",                 :null => false
       t.string   "author",                  :null => false
-      t.string   "author_url",              :null => false
-      t.string   "author_email",            :null => false
-      t.string   "author_openid_authority", :null => false
+      t.string   "author_url"
+      t.string   "author_email"
+      t.string   "author_openid_authority"
       t.text     "body",                    :null => false
       t.text     "body_html",               :null => false
       t.datetime "created_at"
@@ -45,6 +45,7 @@ class InitializeDb < ActiveRecord::Migration
     create_table "posts" do |t|
       t.string   "title",                                                      :null => false
       t.string   "slug",                                                       :null => false
+      t.integer  "user_id",                                                    :null => false
       t.text     "body",                                                       :null => false
       t.text     "body_html",                                                  :null => false
       t.boolean  "active",                  :default => true,                  :null => false

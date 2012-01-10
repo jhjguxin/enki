@@ -80,3 +80,14 @@ Why is rails redirecting? Why can't I show the edit password page? Thanks
 <code>Devise::PasswordsController#edit</code> is for non-authenticated users who wish to change their password using a reset token. This reset token was previously sent to the user in an email (Reset password instructions). If the user is already logged in, this edit password page will always redirect to the after-sign-in path since it shouldn't be accessible to authenticated users.
 
 I suppose what you want is to allow the user to change his password after logging in. You have to use <code>Devise::RegistrationsController#edit</code> for that.
+
+h2. Fix by Francis
+
+<code>Lesstile::CodeRayFormatter</code>in lesstile not match with coderay 1.0.1
+install lesstile with plugin
+<code>rails plugin install git://github.com/xaviershay/lesstile.git</code>
+change lesstile.rb in 'vendor/plugins/lesstile/lib' as bellow:
+<pre><code>
+    #CodeRay.scan(CGI::unescapeHTML(code), lang).html(:line_numbers => :table).div
+    CodeRay.scan(CGI::unescapeHTML(code), lang).div(:line_numbers => :table)
+</code></pre>

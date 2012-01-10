@@ -14,6 +14,7 @@ class Admin::PostsController < Admin::BaseController
 
   def create
     @post = Post.new(params[:post])
+    @post.user=current_user
     if @post.save
       respond_to do |format|
         format.html {
@@ -57,7 +58,8 @@ class Admin::PostsController < Admin::BaseController
 
   def preview
     @post = Post.build_for_preview(params[:post])
-
+    @post.user=current_user
+    #breakpoint
     respond_to do |format|
       format.js {
         render :partial => 'posts/post.html.erb', :locals => {:post => @post}

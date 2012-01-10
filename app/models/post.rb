@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   has_many                :comments, :dependent => :destroy
   has_many                :approved_comments, :class_name => 'Comment'
+  belongs_to              :user
 
   before_validation       :generate_slug
   before_validation       :set_dates

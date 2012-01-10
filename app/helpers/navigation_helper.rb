@@ -12,6 +12,10 @@ module NavigationHelper
     @popular_tags.collect {|tag| link.new("%s(%d)" % [tag.name,tag.taggings_count], posts_path(:tag => tag.name)) }
   end
 
+  def recent_comments_for_navigation
+    Comment.joins(:post).limit(5).reverse_order
+  end
+
   def class_for_tab(tab_name, index)
     classes = []
     classes << 'current' if "admin/#{tab_name.downcase}" == params[:controller]
