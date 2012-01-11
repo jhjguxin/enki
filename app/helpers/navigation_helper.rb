@@ -7,9 +7,11 @@ module NavigationHelper
   end
 
   def category_links_for_navigation
-    link = Struct.new(:name, :url)
+    link = Struct.new(:name, :url,:class,:rel)
     @popular_tags ||= Tag.find(:all).reject {|tag| tag.taggings.empty? }.sort_by {|tag| tag.taggings.size }.reverse
-    @popular_tags.collect {|tag| link.new("%s(%d)" % [tag.name,tag.taggings_count], posts_path(:tag => tag.name)) }
+    #@popular_tags.collect {|tag| link.new("%s(%d)" % [tag.name,tag.taggings_count], posts_path(:tag => tag.name),tag.taggings_count.to_s) }
+    #breakpoint
+    @popular_tags.collect {|tag| link.new(tag.name,posts_path(:tag => tag.name),"%d in tag '%s'" % [tag.taggings_count,tag.name],tag.taggings_count) }
   end
 
   def recent_comments_for_navigation

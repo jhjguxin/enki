@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'tagcloud' %>
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
@@ -39,11 +40,12 @@
         </form>
         <% unless category_links_for_navigation.empty? -%>
           <h2>Categories</h2>
-          <ul>
+          <div id="tagcloud">
             <% category_links_for_navigation.each do |link| -%>
-              <li><%= link_to(link.name, link.url) %></li>
+              <%= link_to link.name, link.url, :title=>link.class,:rel=>link.rel %>
+
             <% end -%>
-          </ul>
+          </div>
         <% end -%>
         <% unless recent_comments_for_navigation.empty? -%>
           <h2>Recent comments</h2>
