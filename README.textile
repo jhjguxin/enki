@@ -91,3 +91,14 @@ change lesstile.rb in 'vendor/plugins/lesstile/lib' as bellow:
     #CodeRay.scan(CGI::unescapeHTML(code), lang).html(:line_numbers => :table).div
     CodeRay.scan(CGI::unescapeHTML(code), lang).div(:line_numbers => :table)
 </code></pre>
+
+default paginate
+  <tfoot>
+    <% if @pages.total_pages > 1 -%>
+      <tr class="pagination">
+        <td colspan='5'>
+          <%= will_paginate(@pages, :previous_label => '« Newer', :next_label => 'Older »') %>
+        </td>
+      </tr>
+    <% end -%>
+  </tfoot>

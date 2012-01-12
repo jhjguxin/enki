@@ -24,12 +24,8 @@
   </tbody>
 
   <tfoot>
-    <% if @comments.total_pages > 1 -%>
-      <tr class="pagination">
-        <td colspan='5'>
-          <%= will_paginate(@comments, :previous_label => '« Newer', :next_label => 'Older »') %>
-        </td>
-      </tr>
+    <% if @comments.pages > 1 -%>
+        <%= paginate @comments %>
     <% end -%>
   </tfoot>
 </table>

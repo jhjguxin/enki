@@ -9,6 +9,9 @@
 	  <%= render :partial => 'posts/post_list', :locals => {:post => post} %>
 	</div>
 	<% end -%>
+    <% if @posts.pages > 1 -%>
+        <%= paginate @posts %>
+    <% end -%>
   <% if more_content? -%>
     <div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
   <% end -%>
