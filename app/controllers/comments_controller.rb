@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  def oldcreate
+  def create
     @comment = Comment.new(params[:comment])
     @comment.post = @post
     if @comment.save
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
   end
 
   # TODO: Spec OpenID with cucumber and rack-my-id
-  def create
+  def oldcreate
     @comment = Comment.new((session[:pending_comment] || params[:comment] || {}).
       reject {|key, value| !Comment.protected_attribute?(key) })
     @comment.post = @post
