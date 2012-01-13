@@ -2,9 +2,8 @@ class Admin::CommentsController < Admin::BaseController
   before_filter :find_comment, :only => [:show, :update, :destroy]
 
   def index
-    @comments = Comment.paginate(
+    @comments = Comment.order("created_at DESC").paginate(
       :include => "post",
-      :order => "comments.created_at DESC",
       :page => params[:page]
     )
   end

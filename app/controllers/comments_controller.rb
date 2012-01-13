@@ -30,8 +30,9 @@ class CommentsController < ApplicationController
       redirect_to post_path(@post)
     else
       #redirect_to post_path(@post), :comment=> @comment
-      #breakpoint 
       render :template => 'posts/show'
+      #breakpoint 
+      #redirect_to post_path(@post)+"/comment#error_explanation", :comment=> @comment
     end
   end
 

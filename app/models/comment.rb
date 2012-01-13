@@ -10,7 +10,12 @@ class Comment < ActiveRecord::Base
   after_save            :denormalize
   after_destroy         :denormalize
 
-  validates_presence_of :author, :body, :post
+   #validates_presence_of :post,:author_email
+  validates :author_email,  :presence => true
+  validates :post,  :presence => true
+  validates :author, :presence => true
+  validates :body,:presence => true,
+                    :length => { :minimum => 5 }
   validate :open_id_error_should_be_blank
 
   def open_id_error_should_be_blank

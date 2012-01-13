@@ -4,7 +4,7 @@ class InitializeDb < ActiveRecord::Migration
       t.integer  "post_id",                 :null => false
       t.string   "author",                  :null => false
       t.string   "author_url"
-      t.string   "author_email"
+      t.string   "author_email",            :null => false
       t.string   "author_openid_authority"
       t.text     "body",                    :null => false
       t.text     "body_html",               :null => false

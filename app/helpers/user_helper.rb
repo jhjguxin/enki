@@ -6,4 +6,5 @@ module UserHelper
       user.name
     end
   end
+
 end

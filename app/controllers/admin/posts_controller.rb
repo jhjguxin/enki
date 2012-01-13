@@ -4,8 +4,7 @@ class Admin::PostsController < Admin::BaseController
   def index
     respond_to do |format|
       format.html {
-        @posts = Post.paginate(
-          :order => "published_at DESC",
+        @posts = Post.order("created_at DESC").paginate(
           :page  => params[:page]
         )
       }

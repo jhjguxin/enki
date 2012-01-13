@@ -18,19 +18,22 @@
 <div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
 <h2>Post a comment</h2>
   <% if @comment.errors.any? %>
-  <div class="errors">
+  <a name="error_explanation" href="#error_explanation"></a>
+  <div class="errors" name="error_explanation">
     <h3>Comment not added!</h3>
     <ul>
       <% @comment.errors.each do |error| %>
-        <li><%= format_comment_error(error) %></li>
+        <li><%= error %></li>
       <% end %>
     </ul>
   </div>
   <% end %>
 <%= form_for([@post, @comment]) do |form| -%>
   <div>
-    <p><%= form.text_field 'author' %><label for="comment_author"></label></p>
-    <p><%= form.text_area 'body' %><br><small>(<a href="http://lesstile.rubyforge.org">lesstile enabled</a> - surround code blocks with ---)</small></p>
+    <p><%= label_tag(:comment_author, "author") %><%= form.text_field 'author' %></p>
+    <p><%= label_tag(:comment_author_url, "website") %><%= form.text_field 'author_url' %></p>
+    <p><%= label_tag(:comment_author_email, "email") %><%= form.text_field 'author_email'%></p>
+    <p><%= label_tag(:comment_body, "cotent") %><%= form.text_area 'body' %><br><small>(<a href="http://lesstile.rubyforge.org">lesstile enabled</a> - surround code blocks with ---)</small></p>
     <p><%= submit_tag "Add Comment" %></p>
   </div>
 <% end -%>

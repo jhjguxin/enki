@@ -10,11 +10,16 @@ module UrlHelper
     post_path(post) + "/comments"
   end
 
-  def author_link(comment)
+  def author_link(comment,options = {})
+    link = opts[:img] || false
     if comment.author_url.blank?
      comment.author
     else
-      link_to(comment.author, comment.author_url, :class => 'openid')
+      if link
+        link_to(gravatar_image_tag(comment.author_email.gsub('spam', 'mdeering'), :alt => comment.author), comment.author_url)
+      else
+        link_to(comment.author, comment.author_url, :class => 'openid')
+      end
     end
   end
 end
