@@ -232,13 +232,18 @@ table tr.alt td {
 }
 
 table th,
-table tr.pagination td {
+table tr.pagination  {
   background-color: #222222;
   color: #eeeeee;
   padding: 5px;
 }
 
-table form {
+table tr  div.pagination ul {
+  background-color: #222222;
+}
+table tr  div.pagination li  {
+  color: #eeeeee;
+  padding: 5px;
   display: inline;
 }
 
@@ -246,7 +251,7 @@ div.pagination {
   text-align: center;
 }
 
-div.pagination a {
+div.pagination ul li a {
   color: #eeeeee;
 }
 

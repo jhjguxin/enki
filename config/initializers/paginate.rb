@@ -1,6 +1,6 @@
 # setup paginate
 RailsPaginate.setup do |config|
-    config.per_page = 1
+    config.per_page = 8
     config.page_param = :page
 
   # configure default renderer

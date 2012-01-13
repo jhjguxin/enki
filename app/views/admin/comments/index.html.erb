@@ -25,7 +25,11 @@
 
   <tfoot>
     <% if @comments.pages > 1 -%>
-        <%= paginate @comments %>
+      <tr class="pagination">
+        <td colspan="0">
+          <%= paginate @comments %>
+        </td>
+      </tr>
     <% end -%>
   </tfoot>
 </table>

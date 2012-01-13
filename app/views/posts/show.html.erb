@@ -6,6 +6,7 @@
 <%= post_title(@post) -%>
 <% end -%>
 <%= render :partial => 'posts/post', :locals => {:post => @post} %>
+<div class="commentlist">
 <ol class="commentlist">
   <% @post.approved_comments.each do |comment| -%>
   <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
@@ -13,6 +14,7 @@
   </li>
   <% end -%>
 </ol>
+</div>
 <div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
 <h2>Post a comment</h2>
   <% if @comment.errors.any? %>

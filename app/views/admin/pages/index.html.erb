@@ -25,7 +25,11 @@
 
   <tfoot>
     <% if @pages.pages > 1 -%>
-        <%= paginate @pages %>
+      <tr class="pagination">
+        <td colspan="0">
+          <%= paginate @pages %>
+        </td>
+      </tr>
     <% end -%>
   </tfoot>
 </table>

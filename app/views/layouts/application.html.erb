@@ -59,7 +59,7 @@
         <h2>Admin</h2>
           <ul>
           <% if user_signed_in? %>    
-             <li>Signed in as <%= current_user.email %>. Not you?    
+             <li>Sign in as <%= link_to show_user(current_user), edit_user_registration_path %>. Not you?    
             <%= link_to "Sign out", destroy_user_session_path %></li>
           <% else %>
              <li>Please,<%= link_to "Sign up", new_user_registration_path %> or    
