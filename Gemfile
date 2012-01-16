@@ -41,6 +41,10 @@ gem 'cancan', '1.4.1'
 # paginate
 #gem 'will_paginate', '3.0.2'
 gem "rails_paginate", "~> 0.0.7"
+
+gem 'paperclip'
+gem 'jquery-rails', '1.0.12'
+gem 'remotipart', '~> 1.0'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:

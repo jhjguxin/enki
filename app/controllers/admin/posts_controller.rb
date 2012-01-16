@@ -1,5 +1,7 @@
 class Admin::PostsController < Admin::BaseController
   before_filter :find_post, :only => [:show, :update, :destroy]
+  respond_to :html, :xml
+  respond_to :js, :only => [:create, :update, :destroy]
 
   def index
     respond_to do |format|
