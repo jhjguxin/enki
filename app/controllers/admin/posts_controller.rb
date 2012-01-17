@@ -13,7 +13,10 @@ class Admin::PostsController < Admin::BaseController
 
   def create
     @post = Post.new(params[:post])
+    (5 - @post.attachment.length).times { @post.attachment.build }
     @post.user=current_user
+
+    delete_empty_attachment
     if @post.save
       respond_to do |format|
         format.html {
@@ -30,10 +33,8 @@ class Admin::PostsController < Admin::BaseController
 
   def update
     #breakpoint
-    if params.member?("post_attachment_destroy") && params[:post_attachment_destroy]=='1'
-      @post.attachment=nil
-    end
     if @post.update_attributes(params[:post])
+      delete_empty_attachment
       respond_to do |format|
         format.html {
           flash[:notice] = "Updated post '#{@post.title}'"
@@ -49,6 +50,7 @@ class Admin::PostsController < Admin::BaseController
 
   def show
     #breakpoint
+    (5 - @post.attachment.length).times { @post.attachment.build }
     respond_to do |format|
       format.html {
         render :partial => 'post', :locals => {:post => @post} if request.xhr?
@@ -58,12 +60,16 @@ class Admin::PostsController < Admin::BaseController
 
   def new
     @post = Post.new
+    (5 - @post.attachment.length).times { @post.attachment.build }
   end
 
   def preview
+    #delete_empty_attachment
+    params[:post][:attachment_attributes]=[]
     @post = Post.build_for_preview(params[:post])
+
     @post.user=current_user
-    #breakpoint
+
     respond_to do |format|
       format.js {
         render :partial => 'posts/post.html.erb', :locals => {:post => @post}
@@ -90,6 +96,13 @@ class Admin::PostsController < Admin::BaseController
   end
 
   protected
+  def delete_empty_attachment
+    @post.attachment.each do |a|
+      if a.image_file_name==nil
+        a.destroy
+      end
+    end
+  end
 
   def find_post
     @post = Post.find(params[:id])

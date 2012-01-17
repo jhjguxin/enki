@@ -2,7 +2,8 @@ class Post < ActiveRecord::Base
   DEFAULT_LIMIT = 15
 
   acts_as_taggable
-  has_attached_file       :attachment, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_many :attachment, :dependent => :destroy
+  accepts_nested_attributes_for :attachment, :allow_destroy => true,:reject_if => proc { |attrs| attrs.all? { |k, v| v.nil? } }
   has_many                :comments, :dependent => :destroy
   has_many                :approved_comments, :class_name => 'Comment'
   belongs_to              :user

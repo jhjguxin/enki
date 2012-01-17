@@ -8,18 +8,38 @@
   <%= form.input :tag_list, :as => 'string', :required => false, :hint => 'Comma separated: ruby, rails&hellip;'.html_safe -%>
 <% end -%>
 <%= form.inputs do -%>
-  <%= form.input :attachment, :required => true %>
-  <% if @post.attachment.exists? %>
-    <div class='post-attachment' id='post-<%= @post.id %>'>
-       <%= link_to @post.attachment_file_name, @post.attachment.url if @post.attachment? %>
-       <%= image_tag @post.attachment.url(:thumb) %>
-       <p>link:!<%= @post.attachment.url %>!
+
+<div class="newPaperclipFiles">
+
+        <%= form.fields_for :attachment do |asset| %>
+        
+           <% if asset.object.new_record? %>
+                 <%= asset.file_field :image %>
+           <% end %>
+
+       <% end %>
+
+</div>
+
+<div class="existingPaperclipFiles">
+        
+     <% form.fields_for :attachment do |asset| %>
+        
+          <% unless asset.object.new_record? %>
+        
+                <div class="thumbnail">
+                        <p>link:!<%= asset.object.image.url(:original) %>!
 </p>
-      <label for="post_attachment_destroy">Remove:</label>
-      <input name="post_attachment_destroy" type="hidden" value="0">
-      <input id="post_attachment_destroy" name="post_attachment_destroy" type="checkbox" value="1">
-    </div>
-  <% end %>
+                        <%= link_to( image_tag(asset.object.image.url(:thumb)), asset.object.image.url(:original) ) %>
+                        <%= asset.label :_destroy, 'Remove:'+asset.object.image_file_name %>
+                        <%= asset.check_box :_destroy %>
+                </div>
+                
+          <% end %>        
+        
+     <% end %>
+</div>
+
 
 <% end -%>
 <%= form.inputs do -%>
