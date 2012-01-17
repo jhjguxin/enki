@@ -1,7 +1,5 @@
 class Admin::PostsController < Admin::BaseController
   before_filter :find_post, :only => [:show, :update, :destroy]
-  respond_to :html, :xml
-  respond_to :js, :only => [:create, :update, :destroy]
 
   def index
     respond_to do |format|
@@ -31,6 +29,10 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def update
+    #breakpoint
+    if params.member?("post_attachment_destroy") && params[:post_attachment_destroy]=='1'
+      @post.attachment=nil
+    end
     if @post.update_attributes(params[:post])
       respond_to do |format|
         format.html {
@@ -46,6 +48,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def show
+    #breakpoint
     respond_to do |format|
       format.html {
         render :partial => 'post', :locals => {:post => @post} if request.xhr?

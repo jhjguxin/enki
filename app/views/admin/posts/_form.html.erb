@@ -8,9 +8,18 @@
   <%= form.input :tag_list, :as => 'string', :required => false, :hint => 'Comma separated: ruby, rails&hellip;'.html_safe -%>
 <% end -%>
 <%= form.inputs do -%>
-  <div class="attachment">
-     <%= form.input :attachment, :required => true %>
-  </div>
+  <%= form.input :attachment, :required => true %>
+  <% if @post.attachment.exists? %>
+    <div class='post-attachment' id='post-<%= @post.id %>'>
+       <%= link_to @post.attachment_file_name, @post.attachment.url if @post.attachment? %>
+       <%= image_tag @post.attachment.url(:thumb) %>
+       <p>link:!<%= @post.attachment.url %>!
+</p>
+      <label for="post_attachment_destroy">Remove:</label>
+      <input name="post_attachment_destroy" type="hidden" value="0">
+      <input id="post_attachment_destroy" name="post_attachment_destroy" type="checkbox" value="1">
+    </div>
+  <% end %>
 
 <% end -%>
 <%= form.inputs do -%>

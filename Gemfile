@@ -42,7 +42,7 @@ gem 'cancan', '1.4.1'
 #gem 'will_paginate', '3.0.2'
 gem "rails_paginate", "~> 0.0.7"
 
-gem 'paperclip'
+gem "paperclip", "~> 2.0"
 gem 'jquery-rails', '1.0.12'
 gem 'remotipart', '~> 1.0'
 # Bundle gems for the local environment. Make sure to

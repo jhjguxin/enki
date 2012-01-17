@@ -198,7 +198,7 @@ DEPENDENCIES
   jquery-rails (= 1.0.12)
   jruby-openssl
   nokogiri (~> 1.5.0)
-  paperclip
+  paperclip (~> 2.0)
   rack-openid
   rails (= 3.0.4)
   rails_paginate (~> 0.0.7)
