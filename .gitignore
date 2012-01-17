@@ -1,5 +1,7 @@
 log/**/*
 log
+public/system/**/*
+public/system
 tmp/**/*
 tmp
 config/database.yml
