@@ -105,7 +105,7 @@ a:hover
 
 img
 {
-  border: solid 1px black;
+  border: 0;
 }
 
 /* Two columns */

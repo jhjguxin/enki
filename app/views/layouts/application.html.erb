@@ -9,6 +9,7 @@
   <%= javascript_include_tag 'rails' %>
   <%= javascript_include_tag 'tagcloud' %>
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
+  <%= favicon_link_tag %>
   <%= yield(:head) %>
 </head>
 <body>
@@ -39,10 +40,10 @@
           </div>
         </form>
         <% unless recent_posts_for_navigation.empty? -%>
-          <h2>Recent post</h2><%= auto_discovery_link_tag(:atom,formatted_posts_path(:format => 'atom')) %>
+          <h2>Recent post<%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
           <ul>
             <% recent_posts_for_navigation.each do |post| -%>
-              <li><%= link_to(post.title, post_path(post)) %> On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></li>
+              <li><%= link_to(post.title, post_path(post)) %> <i><small>On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></small></i></li>
 
             <% end -%>
           </ul>
