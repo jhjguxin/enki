@@ -1,0 +1,11 @@
+user: www-data
+group: data
+chdir: /var/www/enki
+log: log/thin.log
+port: 5000
+environment: production
+#address: 0.0.0.0
+address: 127.0.0.1
+pid: tmp/pid/thin.pid
+servers: 5
+

@@ -81,6 +81,11 @@ Why is rails redirecting? Why can't I show the edit password page? Thanks
 
 I suppose what you want is to allow the user to change his password after logging in. You have to use <code>Devise::RegistrationsController#edit</code> for that.
 
+#sometimes you will catch <code>You have already activated rack 1.3.0, but your Gemfile requires rack 1.2.3.</code>
+这是因为迩安装了多个rack版本、环境造成混乱、请卸载掉不需要的版本或者修改了Gemfile再执行一次bundle install
+
+
+
 h2. Fix by Francis
 
 <code>Lesstile::CodeRayFormatter</code>in lesstile not match with coderay 1.0.1

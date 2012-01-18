@@ -6,6 +6,7 @@ passenger-install-apache2-module
 sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
 sudo passenger-install-apache2-module
 </code></pre>
+
 h2. Get the enki
 
 You can by pass git clone git://github.com/jhjguxin/enki.git
@@ -19,6 +20,7 @@ Creat the db file for produce environmention
 <pre><code>rake db:migrate RAILS_ENV=production</code></pre>
 If everything is ok,mv the enki folder to /var/www/
 <pre><code>sudo mv mv -Rf enki /var/www</code></pre>
+
 h2. Create the Conf file for apache
 
 Create the file named "enki_apache_passenger.conf" in enki's root.And follew inside
@@ -47,6 +49,7 @@ In /ect/apache2/ports.conf add:
 <pre><code>NameVirtualHost *:8088
 Listen 8088
 </code></pre>
+
 h2. Tweak your file/folder permissions
 
 You may also need to tweak your file/folder permissions. Make sure that the following folders are readable and executable by Apache:
@@ -56,6 +59,7 @@ You may also need to tweak your file/folder permissions. Make sure that the foll
 
 the easiest way is type:
 <pre><code>sudo chown -Rf /var/www/enki</code></pre>
+
 h2. Enjoy It!
 
 <pre><code>sudo apachectl start

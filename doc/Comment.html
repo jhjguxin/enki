@@ -127,7 +127,29 @@
   
     <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
   
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile~.html">Rakefile~</a>
+  
     <li class="file"><a href="./vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/VERSION.html">VERSION</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/History_txt.html">History</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Rakefile.html">Rakefile</a>
   
     <li class="file"><a href="./vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
   
@@ -189,6 +211,14 @@
   
     <li><a href="./ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
   
+    <li><a href="./GravatarImageTag.html">GravatarImageTag</a>
+  
+    <li><a href="./GravatarImageTag/ClassMethods.html">GravatarImageTag::ClassMethods</a>
+  
+    <li><a href="./GravatarImageTag/Configuration.html">GravatarImageTag::Configuration</a>
+  
+    <li><a href="./GravatarImageTag/InstanceMethods.html">GravatarImageTag::InstanceMethods</a>
+  
     <li><a href="./ActionView.html">ActionView</a>
   
     <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
@@ -217,6 +247,8 @@
   
     <li><a href="./OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
   
+    <li><a href="./Ability.html">Ability</a>
+  
     <li><a href="./ActiveSupport.html">ActiveSupport</a>
   
     <li><a href="./ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
@@ -229,11 +261,17 @@
   
     <li><a href="./AddIndexes.html">AddIndexes</a>
   
+    <li><a href="./AddNameToUsers.html">AddNameToUsers</a>
+  
+    <li><a href="./AddPaperclipToAttachment.html">AddPaperclipToAttachment</a>
+  
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
     <li><a href="./ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="./Attachment.html">Attachment</a>
   
     <li><a href="./BeValidHtml5.html">BeValidHtml5</a>
   
@@ -245,6 +283,8 @@
   
     <li><a href="./CommentsController.html">CommentsController</a>
   
+    <li><a href="./CreateAttachments.html">CreateAttachments</a>
+  
     <li><a href="./DateHelper.html">DateHelper</a>
   
     <li><a href="./DeleteCommentUndo.html">DeleteCommentUndo</a>
@@ -253,6 +293,8 @@
   
     <li><a href="./DeletePostUndo.html">DeletePostUndo</a>
   
+    <li><a href="./DeviseCreateUsers.html">DeviseCreateUsers</a>
+  
     <li><a href="./DisableFlashSweeping.html">DisableFlashSweeping</a>
   
     <li><a href="./EnkiFormatter.html">EnkiFormatter</a>
@@ -260,6 +302,8 @@
     <li><a href="./FormHelper.html">FormHelper</a>
   
     <li><a href="./InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="./Lesstile.html">Lesstile</a>
   
     <li><a href="./Magazine.html">Magazine</a>
   
@@ -309,6 +353,8 @@
   
     <li><a href="./TagsHelperTest.html">TagsHelperTest</a>
   
+    <li><a href="./TokenAuthenticationsController.html">TokenAuthenticationsController</a>
+  
     <li><a href="./UndoFailed.html">UndoFailed</a>
   
     <li><a href="./UndoItem.html">UndoItem</a>
@@ -316,6 +362,8 @@
     <li><a href="./UrlHelper.html">UrlHelper</a>
   
     <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
   
     <li><a href="./VerificationTest.html">VerificationTest</a>
   
@@ -414,7 +462,7 @@
 
           
           <div class="method-source-code" id="build_for_preview-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 77</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">build_for_preview</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">comment</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new_with_filter</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">requires_openid_authentication?</span>
@@ -449,7 +497,7 @@
 
           
           <div class="method-source-code" id="find_recent-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 86</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_recent</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, {
     <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">DEFAULT_LIMIT</span>,
@@ -482,7 +530,7 @@
 
           
           <div class="method-source-code" id="new_with_filter-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 70</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 77</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new_with_filter</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">comment</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">created_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
@@ -515,7 +563,7 @@
 
           
           <div class="method-source-code" id="protected_attribute-3F-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 66</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">protected_attribute?</span>(<span class="ruby-identifier">attribute</span>)
   [<span class="ruby-value">:author</span>, <span class="ruby-value">:body</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">to_sym</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -551,9 +599,11 @@
 
           
           <div class="method-source-code" id="apply_filter-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 20</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_filter</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body_html</span> = <span class="ruby-constant">Lesstile</span>.<span class="ruby-identifier">format_as_xhtml</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>, <span class="ruby-value">:code_formatter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Lesstile</span><span class="ruby-operator">::</span><span class="ruby-constant">CodeRayFormatter</span>)
+  <span class="ruby-comment">#self.body_html =Lesstile.format_as_html(self.body)</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body_html</span> =<span class="ruby-constant">Lesstile</span>.<span class="ruby-identifier">format_as_html</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>, <span class="ruby-value">:code_formatter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Lesstile</span><span class="ruby-operator">::</span><span class="ruby-constant">CodeRayFormatter</span>) <span class="ruby-comment"># Requires coderay</span>
+  <span class="ruby-comment">#self.body_html =Lesstile.format_as_html(self.body, :code_formatter =&gt; lambda {|code, lang| &quot;Code in #{lang}: #{code}&quot; })</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- apply_filter-source -->
           
@@ -581,7 +631,7 @@
 
           
           <div class="method-source-code" id="approved-3F-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 43</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">approved?</span>
   <span class="ruby-keyword">true</span>
 <span class="ruby-keyword">end</span></pre>
@@ -611,7 +661,7 @@
 
           
           <div class="method-source-code" id="blank_openid_fields-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">blank_openid_fields</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">author_url</span> = <span class="ruby-string">&quot;&quot;</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">author_email</span> = <span class="ruby-string">&quot;&quot;</span>
@@ -642,7 +692,7 @@
 
           
           <div class="method-source-code" id="denormalize-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 47</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">denormalize</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">post</span>.<span class="ruby-identifier">denormalize_comments_count!</span>
 <span class="ruby-keyword">end</span></pre>
@@ -672,7 +722,7 @@
 
           
           <div class="method-source-code" id="destroy_with_undo-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 51</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_with_undo</span>
   <span class="ruby-identifier">undo_item</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
@@ -707,7 +757,7 @@
 
           
           <div class="method-source-code" id="open_id_error_should_be_blank-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_id_error_should_be_blank</span>
   <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:base</span>, <span class="ruby-identifier">openid_error</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">openid_error</span>.<span class="ruby-identifier">blank?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -737,7 +787,7 @@
 
           
           <div class="method-source-code" id="post_title-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 61</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">post_title</span>
   <span class="ruby-identifier">post</span>.<span class="ruby-identifier">title</span>
 <span class="ruby-keyword">end</span></pre>
@@ -767,7 +817,7 @@
 
           
           <div class="method-source-code" id="requires_openid_authentication-3F-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 29</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">requires_openid_authentication?</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">author</span>
 
@@ -799,7 +849,7 @@
 
           
           <div class="method-source-code" id="trusted_user-3F-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 35</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">trusted_user?</span>
   <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
@@ -829,7 +879,7 @@
 
           
           <div class="method-source-code" id="user_logged_in-3F-source">
-            <pre><span class="ruby-comment"># File app/models/comment.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/models/comment.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">user_logged_in?</span>
   <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>

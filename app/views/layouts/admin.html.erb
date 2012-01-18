@@ -19,6 +19,9 @@
   <%= stylesheet_link_tag 'formtastic' %>
   <%= stylesheet_link_tag 'humanmsg' %>
   <%= stylesheet_link_tag 'admin' %>
+
+  <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
+  <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
   <%= yield(:head) %>
 
   <% if flash[:notice] -%>

@@ -1,5 +1,5 @@
 /* additional stylesheets only for IE6, if you wish to support it */
-
+ *= require formtastic_ie6
 /* legend labels apper to have a left margin or padding I couldn't get rid of cleanly in main stylesheet */
 .formtastic .input fieldset legend.label {
   margin-left:-7px;

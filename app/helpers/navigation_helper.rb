@@ -18,6 +18,10 @@ module NavigationHelper
     Comment.joins(:post).limit(5).reverse_order
   end
 
+  def recent_posts_for_navigation
+    Post.joins(:user).limit(10).reverse_order
+  end
+
   def class_for_tab(tab_name, index)
     classes = []
     classes << 'current' if "admin/#{tab_name.downcase}" == params[:controller]

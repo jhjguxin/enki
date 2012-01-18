@@ -70,6 +70,8 @@
     
     <li><a href="#method-i-page_links_for_navigation">#page_links_for_navigation</a>
     
+    <li><a href="#method-i-recent_comments_for_navigation">#recent_comments_for_navigation</a>
+    
   </ul>
 </nav>
 
@@ -99,7 +101,29 @@
   
     <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
   
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile~.html">Rakefile~</a>
+  
     <li class="file"><a href="./vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/VERSION.html">VERSION</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/History_txt.html">History</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Rakefile.html">Rakefile</a>
   
     <li class="file"><a href="./vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
   
@@ -161,6 +185,14 @@
   
     <li><a href="./ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
   
+    <li><a href="./GravatarImageTag.html">GravatarImageTag</a>
+  
+    <li><a href="./GravatarImageTag/ClassMethods.html">GravatarImageTag::ClassMethods</a>
+  
+    <li><a href="./GravatarImageTag/Configuration.html">GravatarImageTag::Configuration</a>
+  
+    <li><a href="./GravatarImageTag/InstanceMethods.html">GravatarImageTag::InstanceMethods</a>
+  
     <li><a href="./ActionView.html">ActionView</a>
   
     <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
@@ -189,6 +221,8 @@
   
     <li><a href="./OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
   
+    <li><a href="./Ability.html">Ability</a>
+  
     <li><a href="./ActiveSupport.html">ActiveSupport</a>
   
     <li><a href="./ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
@@ -201,11 +235,17 @@
   
     <li><a href="./AddIndexes.html">AddIndexes</a>
   
+    <li><a href="./AddNameToUsers.html">AddNameToUsers</a>
+  
+    <li><a href="./AddPaperclipToAttachment.html">AddPaperclipToAttachment</a>
+  
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
     <li><a href="./ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="./Attachment.html">Attachment</a>
   
     <li><a href="./BeValidHtml5.html">BeValidHtml5</a>
   
@@ -217,6 +257,8 @@
   
     <li><a href="./CommentsController.html">CommentsController</a>
   
+    <li><a href="./CreateAttachments.html">CreateAttachments</a>
+  
     <li><a href="./DateHelper.html">DateHelper</a>
   
     <li><a href="./DeleteCommentUndo.html">DeleteCommentUndo</a>
@@ -225,6 +267,8 @@
   
     <li><a href="./DeletePostUndo.html">DeletePostUndo</a>
   
+    <li><a href="./DeviseCreateUsers.html">DeviseCreateUsers</a>
+  
     <li><a href="./DisableFlashSweeping.html">DisableFlashSweeping</a>
   
     <li><a href="./EnkiFormatter.html">EnkiFormatter</a>
@@ -232,6 +276,8 @@
     <li><a href="./FormHelper.html">FormHelper</a>
   
     <li><a href="./InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="./Lesstile.html">Lesstile</a>
   
     <li><a href="./Magazine.html">Magazine</a>
   
@@ -281,6 +327,8 @@
   
     <li><a href="./TagsHelperTest.html">TagsHelperTest</a>
   
+    <li><a href="./TokenAuthenticationsController.html">TokenAuthenticationsController</a>
+  
     <li><a href="./UndoFailed.html">UndoFailed</a>
   
     <li><a href="./UndoItem.html">UndoItem</a>
@@ -288,6 +336,8 @@
     <li><a href="./UrlHelper.html">UrlHelper</a>
   
     <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
   
     <li><a href="./VerificationTest.html">VerificationTest</a>
   
@@ -342,9 +392,11 @@
           <div class="method-source-code" id="category_links_for_navigation-source">
             <pre><span class="ruby-comment"># File app/helpers/navigation_helper.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">category_links_for_navigation</span>
-  <span class="ruby-identifier">link</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span>, <span class="ruby-value">:url</span>)
+  <span class="ruby-identifier">link</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span>, <span class="ruby-value">:url</span>,<span class="ruby-value">:class</span>,<span class="ruby-value">:rel</span>)
   <span class="ruby-ivar">@popular_tags</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>).<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">taggings</span>.<span class="ruby-identifier">empty?</span> }.<span class="ruby-identifier">sort_by</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">taggings</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">reverse</span>
-  <span class="ruby-ivar">@popular_tags</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span> <span class="ruby-identifier">link</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">posts_path</span>(<span class="ruby-value">:tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>)) }
+  <span class="ruby-comment">#@popular_tags.collect {|tag| link.new(&quot;%s(%d)&quot; % [tag.name,tag.taggings_count], posts_path(:tag =&gt; tag.name),tag.taggings_count.to_s) }</span>
+  <span class="ruby-comment">#breakpoint</span>
+  <span class="ruby-ivar">@popular_tags</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span> <span class="ruby-identifier">link</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>,<span class="ruby-identifier">posts_path</span>(<span class="ruby-value">:tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>),<span class="ruby-string">&quot;%d in tag '%s'&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">taggings_count</span>,<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">name</span>],<span class="ruby-identifier">tag</span>.<span class="ruby-identifier">taggings_count</span>) }
 <span class="ruby-keyword">end</span></pre>
           </div><!-- category_links_for_navigation-source -->
           
@@ -372,7 +424,7 @@
 
           
           <div class="method-source-code" id="class_for_tab-source">
-            <pre><span class="ruby-comment"># File app/helpers/navigation_helper.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/helpers/navigation_helper.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">class_for_tab</span>(<span class="ruby-identifier">tab_name</span>, <span class="ruby-identifier">index</span>)
   <span class="ruby-identifier">classes</span> = []
   <span class="ruby-identifier">classes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'current'</span> <span class="ruby-keyword">if</span> <span class="ruby-node">&quot;admin/#{tab_name.downcase}&quot;</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:controller</span>]
@@ -420,6 +472,36 @@
 
         
       </div><!-- page_links_for_navigation-method -->
+
+    
+      <div id="method-i-recent_comments_for_navigation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recent_comments_for_navigation</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recent_comments_for_navigation-source">
+            <pre><span class="ruby-comment"># File app/helpers/navigation_helper.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recent_comments_for_navigation</span>
+  <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">joins</span>(<span class="ruby-value">:post</span>).<span class="ruby-identifier">limit</span>(<span class="ruby-value">5</span>).<span class="ruby-identifier">reverse_order</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recent_comments_for_navigation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recent_comments_for_navigation-method -->
 
     
     </section><!-- public-instance-method-details -->

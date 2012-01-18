@@ -1,0 +1,94 @@
+h1. Guide for thin+nginx+rails
+
+h2. install environments
+
+<pre><code>
+#now gem alreadly in Gemfile.Normally it's will installed by bundle install
+sudo gem install thin #or download the all dependencies gems packages and type 'sudo gem install *-*-*.gem'
+sudo apt-get install nginx
+</code></pre>
+
+h2. Using with anything, ANYTHING!
+
+But Thin can also load Rack config file so you can use it with any framework that supports Rack. Even your own that is, like, soooo much better then Rails, rly!
+<pre><code>thin start#or thin start -R config.ru</code></pre>
+
+h2.Deploying
+
+Deploying a cluster of Thins is super easy. Just specify the number of servers you want to launch.
+
+<pre><code>thin start --servers 3</code></pre>
+-e == Environment in this case development
+-p == TCP/IP Port in this case 3000
+-s == Instances of the webserver in this case 5
+-d == Daemonize to run in background
+
+You can also install Thin as a runlevel script (under /etc/init.d/thin) that will start all your servers after boot.
+
+<pre><code>sudo thin install</code></pre>
+
+and setup a config file for each app you want to start:
+
+<pre><code>thin config -C /etc/thin/myapp.yml -c /var/...</code></pre>
+
+Run thin -h to get all options.
+
+h2.Behind Nginx
+
+Check out this "sample Nginx config file":http://brainspl.at/nginx.conf.txt to proxy requests to a Thin backend.
+<pre><code>
+  # this is where you define your mongrel clusters. 
+  # you need one of these blocks for each cluster
+  # and each one needs its own name to refer to it later.
+  upstream mongrel {
+    server 127.0.0.1:5000;
+    server 127.0.0.1:5001;
+    server 127.0.0.1:5002;
+  }
+</code></pre>
+then start your Thin cluster like this
+<pre><code>
+thin start -s3 -p 5000
+jhjguxin@jhjguxin-virtual-machine:~/enki$ thin start -s3 -p 5000
+Starting server on 0.0.0.0:5000 ... 
+Starting server on 0.0.0.0:5001 ... 
+Starting server on 0.0.0.0:5002 ... </code></pre>
+You can also setup a Thin config file(enki.yml can place in <code>/etc/thin/</code> if your are alread install Thin as a runlevel script (under /etc/init.d/thin) that will start all your servers after boot) and use it to control your cluster:
+<pre><code>
+thin config -C enki.yml -s3 -p 5000
+thin start -C enki.yml</code></pre>
+To connect to Nginx using UNIX domain sockets edit the upstream block in your nginx config file:
+<pre><code>
+upstream  backend {
+   server   unix:/tmp/thin.0.sock;
+   server   unix:/tmp/thin.1.sock;
+   server   unix:/tmp/thin.2.sock;
+}</code></pre>
+and start your cluster like this:
+<pre><code>thin start -s3 --socket /tmp/thin.sock</code></pre>
+
+h2. run in sh
+
+h3.my_stop.sh
+
+I'm lazy and create a very simple shell script to stop this running processes.
+<pre><code>
+#my_stop.sh put it in your app root dir
+$ vi my_stop.sh
+####################
+#!/bin/bash
+
+this_path=`pwd`
+pids_path="$this_path/tmp/pids/*.pid"
+
+for thin_pid in $pids_path
+do
+    echo "Stoping Thin Instance $thin_pid"
+    thin stop -P $thin_pid
+done 
+####################
+$chmod 755 my_stop.sh
+</code></pre>
+
+
+

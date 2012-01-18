@@ -38,6 +38,15 @@
             <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
           </div>
         </form>
+        <% unless recent_posts_for_navigation.empty? -%>
+          <h2>Recent post</h2><%= auto_discovery_link_tag(:atom,formatted_posts_path(:format => 'atom')) %>
+          <ul>
+            <% recent_posts_for_navigation.each do |post| -%>
+              <li><%= link_to(post.title, post_path(post)) %> On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></li>
+
+            <% end -%>
+          </ul>
+        <% end -%>
         <% unless category_links_for_navigation.empty? -%>
           <h2>Categories</h2>
           <div id="tagcloud">

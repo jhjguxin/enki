@@ -128,7 +128,29 @@
   
     <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
   
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile~.html">Rakefile~</a>
+  
     <li class="file"><a href="./vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/VERSION.html">VERSION</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/History_txt.html">History</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Rakefile.html">Rakefile</a>
   
     <li class="file"><a href="./vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
   
@@ -190,6 +212,14 @@
   
     <li><a href="./ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
   
+    <li><a href="./GravatarImageTag.html">GravatarImageTag</a>
+  
+    <li><a href="./GravatarImageTag/ClassMethods.html">GravatarImageTag::ClassMethods</a>
+  
+    <li><a href="./GravatarImageTag/Configuration.html">GravatarImageTag::Configuration</a>
+  
+    <li><a href="./GravatarImageTag/InstanceMethods.html">GravatarImageTag::InstanceMethods</a>
+  
     <li><a href="./ActionView.html">ActionView</a>
   
     <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
@@ -218,6 +248,8 @@
   
     <li><a href="./OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
   
+    <li><a href="./Ability.html">Ability</a>
+  
     <li><a href="./ActiveSupport.html">ActiveSupport</a>
   
     <li><a href="./ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
@@ -230,11 +262,17 @@
   
     <li><a href="./AddIndexes.html">AddIndexes</a>
   
+    <li><a href="./AddNameToUsers.html">AddNameToUsers</a>
+  
+    <li><a href="./AddPaperclipToAttachment.html">AddPaperclipToAttachment</a>
+  
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
     <li><a href="./ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="./Attachment.html">Attachment</a>
   
     <li><a href="./BeValidHtml5.html">BeValidHtml5</a>
   
@@ -246,6 +284,8 @@
   
     <li><a href="./CommentsController.html">CommentsController</a>
   
+    <li><a href="./CreateAttachments.html">CreateAttachments</a>
+  
     <li><a href="./DateHelper.html">DateHelper</a>
   
     <li><a href="./DeleteCommentUndo.html">DeleteCommentUndo</a>
@@ -254,6 +294,8 @@
   
     <li><a href="./DeletePostUndo.html">DeletePostUndo</a>
   
+    <li><a href="./DeviseCreateUsers.html">DeviseCreateUsers</a>
+  
     <li><a href="./DisableFlashSweeping.html">DisableFlashSweeping</a>
   
     <li><a href="./EnkiFormatter.html">EnkiFormatter</a>
@@ -261,6 +303,8 @@
     <li><a href="./FormHelper.html">FormHelper</a>
   
     <li><a href="./InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="./Lesstile.html">Lesstile</a>
   
     <li><a href="./Magazine.html">Magazine</a>
   
@@ -310,6 +354,8 @@
   
     <li><a href="./TagsHelperTest.html">TagsHelperTest</a>
   
+    <li><a href="./TokenAuthenticationsController.html">TokenAuthenticationsController</a>
+  
     <li><a href="./UndoFailed.html">UndoFailed</a>
   
     <li><a href="./UndoItem.html">UndoItem</a>
@@ -317,6 +363,8 @@
     <li><a href="./UrlHelper.html">UrlHelper</a>
   
     <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
   
     <li><a href="./VerificationTest.html">VerificationTest</a>
   
@@ -415,7 +463,7 @@
 
           
           <div class="method-source-code" id="build_for_preview-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 40</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">build_for_preview</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>)
   <span class="ruby-identifier">post</span>.<span class="ruby-identifier">generate_slug</span>
@@ -452,7 +500,7 @@
 
           
           <div class="method-source-code" id="find_all_grouped_by_month-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 79</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 81</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_all_grouped_by_month</span>
   <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">find</span>(
     <span class="ruby-value">:all</span>,
@@ -488,7 +536,7 @@
 
           
           <div class="method-source-code" id="find_by_permalink-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 65</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_permalink</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">slug</span>, <span class="ruby-identifier">options</span> = {})
   <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">day</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>([<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>].<span class="ruby-identifier">collect</span>(&amp;<span class="ruby-value">:to_i</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;-&quot;</span>)).<span class="ruby-identifier">midnight</span>
@@ -528,7 +576,7 @@
 
           
           <div class="method-source-code" id="find_recent-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 51</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_recent</span>(<span class="ruby-identifier">options</span> = {})
   <span class="ruby-identifier">tag</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:tag</span>)
   <span class="ruby-identifier">options</span> = {
@@ -574,7 +622,7 @@
 
           
           <div class="method-source-code" id="apply_filter-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 101</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_filter</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body_html</span> = <span class="ruby-constant">EnkiFormatter</span>.<span class="ruby-identifier">format_as_xhtml</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -604,7 +652,7 @@
 
           
           <div class="method-source-code" id="denormalize_comments_count-21-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 110</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">denormalize_comments_count!</span>
   <span class="ruby-constant">Post</span>.<span class="ruby-identifier">update_all</span>([<span class="ruby-string">&quot;approved_comments_count = ?&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">approved_comments</span>.<span class="ruby-identifier">count</span>], [<span class="ruby-string">&quot;id = ?&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -634,7 +682,7 @@
 
           
           <div class="method-source-code" id="destroy_with_undo-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 90</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy_with_undo</span>
   <span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
     <span class="ruby-keyword">self</span>.<span class="ruby-identifier">destroy</span>
@@ -667,7 +715,7 @@
 
           
           <div class="method-source-code" id="generate_slug-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 114</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_slug</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">slug</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">title</span>.<span class="ruby-identifier">dup</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">slug</span>.<span class="ruby-identifier">blank?</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">slug</span>.<span class="ruby-identifier">slugorize!</span>
@@ -698,7 +746,7 @@
 
           
           <div class="method-source-code" id="minor_edit-3F-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">minor_edit?</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">minor_edit</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;1&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -728,7 +776,7 @@
 
           
           <div class="method-source-code" id="month-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 97</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">month</span>
   <span class="ruby-identifier">published_at</span>.<span class="ruby-identifier">beginning_of_month</span>
 <span class="ruby-keyword">end</span></pre>
@@ -758,7 +806,7 @@
 
           
           <div class="method-source-code" id="published-3F-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 30</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">published?</span>
   <span class="ruby-identifier">published_at?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -788,7 +836,7 @@
 
           
           <div class="method-source-code" id="set_dates-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 105</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 107</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_dates</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">edited_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">edited_at</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">minor_edit?</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">published_at</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">published_at_natural</span>)
@@ -819,7 +867,7 @@
 
           
           <div class="method-source-code" id="tag_list-3D-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 120</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tag_list=</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:join</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">value</span>)
@@ -850,7 +898,7 @@
 
           
           <div class="method-source-code" id="validate_published_at_natural-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">validate_published_at_natural</span>
   <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">&quot;published_at_natural&quot;</span>, <span class="ruby-string">&quot;Unable to parse time&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">published?</span>
 <span class="ruby-keyword">end</span></pre>

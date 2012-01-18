@@ -90,6 +90,8 @@
     
     <li><a href="#method-i-new">#new</a>
     
+    <li><a href="#method-i-oldcreate">#oldcreate</a>
+    
     <li><a href="#method-i-verify_authenticity_token_unless_openid">#verify_authenticity_token_unless_openid</a>
     
   </ul>
@@ -121,7 +123,29 @@
   
     <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile.html">Rakefile</a>
   
+    <li class="file"><a href="./vendor/plugins/acts_as_taggable_on_steroids/Rakefile~.html">Rakefile~</a>
+  
     <li class="file"><a href="./vendor/plugins/exception_notification/README.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/gravatar_image_tag/VERSION.html">VERSION</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/History_txt.html">History</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./vendor/plugins/lesstile/Rakefile.html">Rakefile</a>
   
     <li class="file"><a href="./vendor/plugins/open_id_authentication/CHANGELOG.html">CHANGELOG</a>
   
@@ -183,6 +207,14 @@
   
     <li><a href="./ActionController/Verification/ClassMethods.html">ActionController::Verification::ClassMethods</a>
   
+    <li><a href="./GravatarImageTag.html">GravatarImageTag</a>
+  
+    <li><a href="./GravatarImageTag/ClassMethods.html">GravatarImageTag::ClassMethods</a>
+  
+    <li><a href="./GravatarImageTag/Configuration.html">GravatarImageTag::Configuration</a>
+  
+    <li><a href="./GravatarImageTag/InstanceMethods.html">GravatarImageTag::InstanceMethods</a>
+  
     <li><a href="./ActionView.html">ActionView</a>
   
     <li><a href="./ActionView/Helpers.html">ActionView::Helpers</a>
@@ -211,6 +243,8 @@
   
     <li><a href="./OpenIdAuthentication/Result.html">OpenIdAuthentication::Result</a>
   
+    <li><a href="./Ability.html">Ability</a>
+  
     <li><a href="./ActiveSupport.html">ActiveSupport</a>
   
     <li><a href="./ActsAsTaggableMigration.html">ActsAsTaggableMigration</a>
@@ -223,11 +257,17 @@
   
     <li><a href="./AddIndexes.html">AddIndexes</a>
   
+    <li><a href="./AddNameToUsers.html">AddNameToUsers</a>
+  
+    <li><a href="./AddPaperclipToAttachment.html">AddPaperclipToAttachment</a>
+  
     <li><a href="./ApplicationController.html">ApplicationController</a>
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
     <li><a href="./ArchivesController.html">ArchivesController</a>
+  
+    <li><a href="./Attachment.html">Attachment</a>
   
     <li><a href="./BeValidHtml5.html">BeValidHtml5</a>
   
@@ -239,6 +279,8 @@
   
     <li><a href="./CommentsController.html">CommentsController</a>
   
+    <li><a href="./CreateAttachments.html">CreateAttachments</a>
+  
     <li><a href="./DateHelper.html">DateHelper</a>
   
     <li><a href="./DeleteCommentUndo.html">DeleteCommentUndo</a>
@@ -247,6 +289,8 @@
   
     <li><a href="./DeletePostUndo.html">DeletePostUndo</a>
   
+    <li><a href="./DeviseCreateUsers.html">DeviseCreateUsers</a>
+  
     <li><a href="./DisableFlashSweeping.html">DisableFlashSweeping</a>
   
     <li><a href="./EnkiFormatter.html">EnkiFormatter</a>
@@ -254,6 +298,8 @@
     <li><a href="./FormHelper.html">FormHelper</a>
   
     <li><a href="./InitializeDb.html">InitializeDb</a>
+  
+    <li><a href="./Lesstile.html">Lesstile</a>
   
     <li><a href="./Magazine.html">Magazine</a>
   
@@ -303,6 +349,8 @@
   
     <li><a href="./TagsHelperTest.html">TagsHelperTest</a>
   
+    <li><a href="./TokenAuthenticationsController.html">TokenAuthenticationsController</a>
+  
     <li><a href="./UndoFailed.html">UndoFailed</a>
   
     <li><a href="./UndoItem.html">UndoItem</a>
@@ -310,6 +358,8 @@
     <li><a href="./UrlHelper.html">UrlHelper</a>
   
     <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
   
     <li><a href="./VerificationTest.html">VerificationTest</a>
   
@@ -370,55 +420,22 @@
 
         <div class="method-description">
           
-          <p>TODO: Spec OpenID with cucumber and rack-my-id</p>
+          
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
-  <span class="ruby-ivar">@comment</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:comment</span>] <span class="ruby-operator">||</span> {}).
-    <span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-constant">Comment</span>.<span class="ruby-identifier">protected_attribute?</span>(<span class="ruby-identifier">key</span>) })
+  <span class="ruby-ivar">@comment</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:comment</span>])
   <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">post</span> = <span class="ruby-ivar">@post</span>
-
-  <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-keyword">nil</span>
-
-  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">requires_openid_authentication?</span>
-    <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-value">:comment</span>]
-    <span class="ruby-identifier">authenticate_with_open_id</span>(<span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span>,
-      <span class="ruby-value">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:nickname</span>, <span class="ruby-value">:fullname</span>, <span class="ruby-value">:email</span>]
-    ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span>, <span class="ruby-identifier">registration</span><span class="ruby-operator">|</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:successful</span>
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">post</span> = <span class="ruby-ivar">@post</span>
-
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span> = <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span>
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span> = (
-          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;fullname&quot;</span>] <span class="ruby-operator">||</span>
-          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;nickname&quot;</span>] <span class="ruby-operator">||</span>
-          <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span>
-        ).<span class="ruby-identifier">to_s</span>
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_email</span> = (
-          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;email&quot;</span>] <span class="ruby-operator">||</span>
-          <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span>
-        ).<span class="ruby-identifier">to_s</span>
-
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">openid_error</span> = <span class="ruby-string">&quot;&quot;</span>
-        <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-keyword">nil</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">openid_error</span> = <span class="ruby-constant">OPEN_ID_ERRORS</span>[ <span class="ruby-identifier">result</span>.<span class="ruby-identifier">status</span> ]
-      <span class="ruby-keyword">end</span>
-    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">post_path</span>(<span class="ruby-ivar">@post</span>)
   <span class="ruby-keyword">else</span>
-    <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">blank_openid_fields</span>
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-comment"># #authenticate_with_open_id may have already provided a response</span>
-  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">OpenID</span><span class="ruby-operator">::</span><span class="ruby-constant">AUTHENTICATE_HEADER</span>]
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">post_path</span>(<span class="ruby-ivar">@post</span>)
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts/show'</span>
-    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#redirect_to post_path(@post), :comment=&gt; @comment</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts/show'</span>
+    <span class="ruby-comment">#breakpoint </span>
+    <span class="ruby-comment">#redirect_to post_path(@post)+&quot;/comment#error_explanation&quot;, :comment=&gt; @comment</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- create-source -->
@@ -497,6 +514,78 @@
       </div><!-- new-method -->
 
     
+      <div id="method-i-oldcreate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">oldcreate</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: Spec OpenID with cucumber and rack-my-id</p>
+          
+
+          
+          <div class="method-source-code" id="oldcreate-source">
+            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">oldcreate</span>
+  <span class="ruby-ivar">@comment</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:comment</span>] <span class="ruby-operator">||</span> {}).
+    <span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-constant">Comment</span>.<span class="ruby-identifier">protected_attribute?</span>(<span class="ruby-identifier">key</span>) })
+  <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">post</span> = <span class="ruby-ivar">@post</span>
+
+  <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">requires_openid_authentication?</span>
+    <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-value">:comment</span>]
+    <span class="ruby-identifier">authenticate_with_open_id</span>(<span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span>,
+      <span class="ruby-value">:optional</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:nickname</span>, <span class="ruby-value">:fullname</span>, <span class="ruby-value">:email</span>]
+    ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">identity_url</span>, <span class="ruby-identifier">registration</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:successful</span>
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">post</span> = <span class="ruby-ivar">@post</span>
+
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span> = <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span>
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author</span> = (
+          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;fullname&quot;</span>] <span class="ruby-operator">||</span>
+          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;nickname&quot;</span>] <span class="ruby-operator">||</span>
+          <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span>
+        ).<span class="ruby-identifier">to_s</span>
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_email</span> = (
+          <span class="ruby-identifier">registration</span>[<span class="ruby-string">&quot;email&quot;</span>] <span class="ruby-operator">||</span>
+          <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">author_url</span>
+        ).<span class="ruby-identifier">to_s</span>
+
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">openid_error</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">session</span>[<span class="ruby-value">:pending_comment</span>] = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">openid_error</span> = <span class="ruby-constant">OPEN_ID_ERRORS</span>[ <span class="ruby-identifier">result</span>.<span class="ruby-identifier">status</span> ]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">blank_openid_fields</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># #authenticate_with_open_id may have already provided a response</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">OpenID</span><span class="ruby-operator">::</span><span class="ruby-constant">AUTHENTICATE_HEADER</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@comment</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">post_path</span>(<span class="ruby-ivar">@post</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts/show'</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- oldcreate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- oldcreate-method -->
+
+    
     </section><!-- public-instance-method-details -->
   
      <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
@@ -519,7 +608,7 @@
 
           
           <div class="method-source-code" id="find_post-source">
-            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 76</span>
+            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_post</span>
   <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find_by_permalink</span>(*[<span class="ruby-value">:year</span>, <span class="ruby-value">:month</span>, <span class="ruby-value">:day</span>, <span class="ruby-value">:slug</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">params</span>[<span class="ruby-identifier">x</span>]
@@ -551,7 +640,7 @@
 
           
           <div class="method-source-code" id="verify_authenticity_token_unless_openid-source">
-            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 82</span>
+            <pre><span class="ruby-comment"># File app/controllers/comments_controller.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">verify_authenticity_token_unless_openid</span>
   <span class="ruby-identifier">verify_authenticity_token</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">using_open_id?</span>
 <span class="ruby-keyword">end</span></pre>
