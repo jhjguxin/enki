@@ -48,6 +48,8 @@ gem 'remotipart', '~> 1.0'
 
 #A thin and fast web server
 gem "thin", "~> 1.3.1"
+#git api
+gem "github_api", "~> 0.4.1"
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:

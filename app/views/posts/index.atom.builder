@@ -11,10 +11,10 @@ atom_feed(
 ) do |feed|
   feed.title     posts_title(@tag)
   feed.updated   @posts.empty? ? Time.now.utc : @posts.collect(&:edited_at).max
-  feed.generator "Enki", "uri" => "http://enkiblog.com"
+  feed.generator "Enki", "uri" => "<%= enki_config[:url]%>"
 
   feed.author do |xml|
-    xml.name  author.name
+    xml.name  author.name unless author.name.nil?
     xml.email author.email unless author.email.nil?
   end
 
