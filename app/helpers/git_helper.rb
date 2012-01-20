@@ -7,11 +7,8 @@ module GitHelper
 
     if skip_fork
       repos.each do |r|
-        #repos.delete(r) if r.fork==true
+        repos.delete(r) if r.fork==true
         #breakpoint
-        unless r.fork==true
-          repos.delete(r)
-        end
       end
 
     else
