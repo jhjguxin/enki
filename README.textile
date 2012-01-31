@@ -6,6 +6,8 @@ Preferences are for the masses. Any real coder knows the easiest and best way to
 
 h2. Quick Start
 
+make sure you are using **ruby 1.8.7**,you can controle ruby's version by rvm
+
 <pre><code>  git clone git://github.com/jhjguxin/enki.git
   cd enki
   git checkout -b myblog # Create a new work branch
@@ -97,4 +99,98 @@ change lesstile.rb in 'vendor/plugins/lesstile/lib' as bellow:
     CodeRay.scan(CGI::unescapeHTML(code), lang).div(:line_numbers => :table)
 </code></pre>
 
+h2. add rvm in ubuntu
 
+<pre><code>
+#install Dependencies:
+sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+sudo apt-get install ruby-rvm
+</code></pre>
+
+h3. add rvm group to user
+
+<pre><code>jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a root rvm
+Adding user root to group rvm
+jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a jhjguxin rvm
+Adding user jhjguxin to group rvm
+jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a www-data rvm
+Adding user www-data to group rvm</code></pre>
+
+h3. add rvm to shell
+
+vim ~/.bashrc
+[[ -s "/usr/share/ruby-rvm/scripts/rvm" ]] && source /usr/share/ruby-rvm/scripts/rvm  # This loads RVM into a shell session.没有引号
+
+restart the shell opened
+
+If installation and configuration were successful, RVM should now load whenever you open a new shell. This can be tested by executing the following command which should output 'rvm is a function' as shown below.
+
+user$ type rvm | head -1
+rvm is a function
+
+RVM安装完成后，就可以通过TA来安装管理 Ruby 了。用下面一条命令来安装Ruby 1.9.2
+
+$  rvm install 1.9.2
+
+*Ruby包的下载实在太慢了，这里总是中断。有个小技巧，你可以用工具下载好ruby-1.9.2-p0.tar.bz2，然后手工放到~/.rvm/archives 目录下。然后再运行这条命令，就可以直接解压安装了。
+
+ 
+
+把该版本的Ruby设为默认
+
+rvm --help
+获得rvm的常用用法：
+
+rvm [Flags] [Options] Action [Implementation[,Implementation[,...]]
+rvm最常用的Action包括：
+
+对Ruby的操作
+主要包括读取，安装，卸载，更新，读取ruby等.
+
+读取远程可安装的Ruby版本
+#获得当前可以用的ruby版本
+rvm list known
+安装Ruby
+#安装其中的ruby1.9.2-p290
+rvm install ruby-1.9.2-p290
+使用
+#切换到刚刚安装的ruby1.9.2-p290版本
+rvm use ruby1.9.2-p290
+读取
+#列出当前rvm下的ruby版本
+rvm list
+#查询当前使用的ruby版本路径
+which ruby
+#获得当前ruby版本
+ruby -v
+输出rvm当前使用的ruby版本与gemset信息：
+rvm info
+在项目文件中使用RVM
+在自己的项目根目录下面，创建一个.rvmrc文件，里面内容可以指定ruby版本与gemset。例如，某项目根目录下面的.rvmrc文件内容如下：
+
+rvm ruby-1.9.2-p290@rails31
+这表示，该项目使用ruby1.9.2p290这个版本的ruby，gem安装在rails31下面。然后iterm的zsh或者bash；或者TextMate中的rubymate,rakemate；以及pow等工具就可以直接调用相应ruby版本与相应gemset。
+
+h2. rvm on ubuntu 11.10 install ruby 1.9.2 error
+
+When trying to install ruby 1.9.2 using rvm I got a nasty suprise:
+
+<code>
+ossl_ssl.c:110:1: error: ‘SSLv2_method’ undeclared here (not in a function)
+ossl_ssl.c:111:1: error: ‘SSLv2_server_method’ undeclared here (not in a function)
+ossl_ssl.c:112:1: error: ‘SSLv2_client_method’ undeclared here (not in a function)
+make[1]: *** [ossl_ssl.o] Error 1
+make[1]: Leaving directory `/var/cache/ruby-rvm/src/ruby-1.9.2-p180/ext/openssl'
+make: *** [mkmain.sh] Error 1
+</code>
+
+The solution
+
+<code>
+sudo apt-get install ruby-rvm
+# make sure we have $rvm_path
+source /etc/profile
+# don't use ubuntus openssl
+rvm package install openssl
+rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
+</code>
