@@ -1,7 +1,15 @@
 h2. Install passenger and apache2
 
+**if you are rvm user the sudo is not need,and you must care about the PassengerRuby and PassengerRoot in "enki_apache_passanger.conf" file**,and you will see when passenger-install-apache2-module installed,for example 
+
+<code>   LoadModule passenger_module /usr/share/ruby-rvm/gems/ruby-1.8.7-p357/gems/passenger-3.0.11/ext/apache2/mod_passenger.so
+   PassengerRoot /usr/share/ruby-rvm/gems/ruby-1.8.7-p357/gems/passenger-3.0.11
+   PassengerRuby /usr/share/ruby-rvm/rubies/ruby-1.8.7-p357/bin/ruby
+</code>
+
 <pre><code>sudo apt-get install apache2
-sudo gem install passengercode
+sudo gem install passenger
+#type follow
 passenger-install-apache2-module
 sudo apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
 sudo passenger-install-apache2-module
@@ -58,7 +66,7 @@ You may also need to tweak your file/folder permissions. Make sure that the foll
  * all parent folders. That is, /webapps/mycook and /webapps must also be readable and executable by Apache.
 
 the easiest way is type:
-<pre><code>sudo chown -Rf /var/www/enki</code></pre>
+<pre><code>sudo chown www-data:www-data -Rf /var/www/enki</code></pre>
 
 h2. Enjoy It!
 
