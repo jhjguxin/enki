@@ -52,12 +52,15 @@ gem "thin", "~> 1.3.1"
 gem "github_api", "~> 0.4.1"
 
 
-# 全文搜索
+# 全文搜索 sunspot 是一个java程序 在heroku中使用需要付费这里可以使用naive-search替代
 gem 'sunspot_rails', "~> 1.3.0"
-# This is an optional packaged Solr:
-group :test, :development do
-  gem 'sunspot_solr'
-end
+#if sunspot not running currected there will "Errno::ECONNREFUSED (Connection refused - connect(2)): "
+#rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start
+#you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
+#rake sunspot:reindex
+#heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang
+gem 'sunspot_solr'
+#gem "naive-search", "~> 0.1.8"
 #麵包屑
 gem "breadcrumbs_on_rails", "~> 2.1.0"
 
