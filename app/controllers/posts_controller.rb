@@ -7,7 +7,9 @@ class PostsController < ApplicationController
     @posts = Post.find_recent(:tag => @tag, :include => :tags).paginate params[:page]
 
 #    add_breadcrumb I18n.t("menu.posts"),  @index_path
-    if not @tag.nil?
+    if @tag.nil?
+      add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
+    else
       add_breadcrumb("#{t("menu.posts")}: #{@tag}",@index)
     end
     
