@@ -50,6 +50,17 @@ gem 'remotipart', '~> 1.0'
 gem "thin", "~> 1.3.1"
 #git api
 gem "github_api", "~> 0.4.1"
+
+
+# 全文搜索
+gem 'sunspot_rails', "~> 1.3.0"
+# This is an optional packaged Solr:
+group :test, :development do
+  gem 'sunspot_solr'
+end
+#麵包屑
+gem "breadcrumbs_on_rails", "~> 2.1.0"
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:

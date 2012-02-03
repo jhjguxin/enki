@@ -1,0 +1,26 @@
+  <div class="search_results">
+    <% unless @search.results.blank? %>
+      <% @search.each_hit_with_result do |hit, post| %>
+	<div class="post post-<%= post.id %>">
+	  <%= render :partial => 'posts/post_list', :locals => {:post => post, :hit => hit} %>
+          <div class="score">relevance score:<%= hit.score %></div>
+	</div>
+
+      <% end %>
+    <% if @search.results.length > 1 -%>
+          <%= paginate @search.results %>
+    <% end -%>
+    <% else %>
+      <div class="search_post">
+        <%= t("common.no_search_result") %>
+       <form method="get" id="sform" action="http://www.google.com/search">
+         <div>
+           <h2><label for="q">Search On Google</label></h2>
+
+           <input type="text" id="q" value="" name="q">
+           <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
+          </div>
+        </form>
+      </div>
+    <% end %>
+  </div>

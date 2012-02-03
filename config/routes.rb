@@ -2,6 +2,8 @@ Enki::Application.routes.draw do
   devise_for :users
   resources :token_authentications, :only => [:create, :destroy]
 
+  match "/search" => "search#index", :as => :search
+
   namespace 'admin' do
     #resource :session
     resources :posts, :pages do

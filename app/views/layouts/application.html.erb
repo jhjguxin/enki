@@ -18,8 +18,12 @@
       <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
 
       <div id="main">
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+        <div class="container">
+          <%= render_breadcrumbs %>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+
 
         <%= yield %>
       </div>
@@ -31,14 +35,8 @@
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
         </ul>
-        <form method="get" id="sform" action="http://www.google.com/search">
-          <div>
-            <h2><label for="q">Search</label></h2>
-
-            <input type="text" id="q" value="" name="q">
-            <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
-          </div>
-        </form>
+        <h2><label for="q">Search</label></h2>
+        <%= render "common/search_form" %>
         <% unless recent_posts_for_navigation.empty? -%>
           <h2>Recent post<%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
           <ul>
@@ -77,9 +75,8 @@
           <% end %>
           <ul> 
         </div>
-
-          <% unless list_user_repos.empty? %>    
-        <div id="user_nav">    
+        <% unless list_user_repos.empty? %>    
+        <div id="user_git_repos">    
         <h2>Github Repos</h2>
           <ul>
             <% list_user_repos("jhjguxin",{:skip_fork=>true,}).each do |repos| -%>
@@ -87,7 +84,8 @@
             <% end -%>
           <ul> 
         </div>
-          <% end %>
+        <% end %>
+
 
       </div>
 

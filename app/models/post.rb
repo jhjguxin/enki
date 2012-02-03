@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
 
   validate                :validate_published_at_natural
 
+
   def validate_published_at_natural
     errors.add("published_at_natural", "Unable to parse time") unless published?
   end
@@ -122,5 +123,23 @@ class Post < ActiveRecord::Base
   def tag_list=(value)
     value = value.join(", ") if value.respond_to?(:join)
     super(value)
+  end
+  #In order for an ActiveRecord model to be indexable and searchable, it must be configured for search.
+  #searchable do
+  searchable do
+    text :title, :stored => true
+    text :body, :stored => true
+    text :user, :stored => true
+    text :comments, :stored => true do
+      comments.map { |comment| comment.body }
+    end
+    #integer :post_id do not need
+    integer :user_id
+    integer :tag_ids, :multiple => true
+    time    :published_at
+    time    :updated_at
+    string :sort_title do
+      title.downcase.gsub(/^(an?|the)\b/, '')
+    end
   end
 end
