@@ -175,22 +175,71 @@ h2. rvm on ubuntu 11.10 install ruby 1.9.2 error
 
 When trying to install ruby 1.9.2 using rvm I got a nasty suprise:
 
-<code>
+<pre><code>
 ossl_ssl.c:110:1: error: ‘SSLv2_method’ undeclared here (not in a function)
 ossl_ssl.c:111:1: error: ‘SSLv2_server_method’ undeclared here (not in a function)
 ossl_ssl.c:112:1: error: ‘SSLv2_client_method’ undeclared here (not in a function)
 make[1]: *** [ossl_ssl.o] Error 1
 make[1]: Leaving directory `/var/cache/ruby-rvm/src/ruby-1.9.2-p180/ext/openssl'
 make: *** [mkmain.sh] Error 1
-</code>
+</code></pre>
 
 The solution
 
-<code>
+<pre><code>
 sudo apt-get install ruby-rvm
 # make sure we have $rvm_path
 source /etc/profile
 # don't use ubuntus openssl
 rvm package install openssl
 rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
-</code>
+</code></pre>
+
+h2. Quickstart sunspot with Rails 3
+
+Add to Gemfile:
+
+<pre><code>
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+</code></pre>
+
+Bundle it!
+
+<code>bundle install</code>
+
+Generate a default configuration file:
+
+<code>rails generate sunspot_rails:install</code>
+
+If sunspot_solr was installed, start the packaged Solr distribution with:
+
+<code>bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground</code>
+
+Now that Sunspot knows how to index the Post model, we need to get the existing data into Solr. Any time a Post is created, updated, or destroyed, Sunspot::Rails will automatically make the change to the index; you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
+
+<code>$ rake sunspot:reindex</code>
+
+If sunspot_solr was installed, start the packaged Solr distribution with:
+
+<pre><code>
+jhjguxin@jhjguxin-Aspire-4750:~$ heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang#using on heroku
+or type:sunspot-solr start -- -p 8983 or sunspot-solr start -- -p 8983 -d data/solr/myapp
+</code></pre>
+
+Try to start the solr
+
+Solr服务控制
+将以上内容添加到Rakefile后，将会多出4个task出来
+
+服务器启动:
+rake sunspot:solr:start
+初次启动，会安装一个embed的solr程序，那么开发环境中省去了安装配置Solr环境繁琐步骤。不过，production环境里可不要使用这个embed版。
+
+服务器停止:
+rake sunspot:solr:stop
+全部重建索引：
+rake sunspot:reindex
+如果你想看到运行日志，把服务跑在前端。可以使用一下命令:
+rake sunspot:solr:run
+使用以上命令，就能完成对Sunspot的控制。

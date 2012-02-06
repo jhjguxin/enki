@@ -23,7 +23,12 @@
     edit_account_path: "个人资料设置"
     likes: "我的收藏"
   common:
+    post: "文章"
+    comment: "留言"
+    tag: "标签"
     read_post: "阅读文章"
+    latest_posts: "最新文章"
+    latest_comments: "最新留言"
     justnow: '刚刚'
     hour: '小时'
     minute: '分钟'

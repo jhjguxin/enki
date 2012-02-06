@@ -22,7 +22,12 @@
     edit_account_path: "Account Profile"
     likes: "Favorites"
   common:
+    post: "post"
+    comment: "comment"
+    tag: "tag"
     read_post: "Read post"
+    latest_posts: "Latest Posts"
+    latest_comments: "Latest Comments"
     justnow: 'Just Now'
     hour: 'Hour'
     minute: 'Minute'
