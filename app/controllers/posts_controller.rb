@@ -7,9 +7,9 @@ class PostsController < ApplicationController
     @posts = Post.find_recent(:tag => @tag, :include => :tags).paginate params[:page]
 
 #    add_breadcrumb I18n.t("menu.posts"),  @index_path
-    if @tag.nil?
-      add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
-    else
+    if not @tag.nil?
+      #add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
+    #else
       add_breadcrumb("#{t("menu.posts")}: #{@tag}",@index)
     end
     
@@ -22,6 +22,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by_permalink(*([:year, :month, :day, :slug].collect {|x| params[x] } << {:include => [:approved_comments, :tags]}))
     @comment = Comment.new
-    add_breadcrumb("#{t("posts.read_post")}: #{@post.title}",@show)
+    add_breadcrumb("#{t("common.read_post")}: #{@post.title}",@show)
   end
 end

@@ -1,0 +1,36 @@
+"en":
+  activerecord:
+    models:
+      post: Post
+    attributes:
+      post:
+        create_post: "New Post"
+        edit_post: "Edit Post"
+        no_replies: "No Reply at the moment."
+        check_recent_posts: "Read more recent Posts..."
+        reply_this_fllor: "Reply to this floor"
+        tips_for_create_post: "Tips for New Posts"
+        start_a_new_post_button: "Start a new Post"
+        subscribe_with_rss: "Subscribe to %{name} RSS feed."
+        submit_reply: "Reply"
+        hot_post: "Popular Posts"
+        post_list: "Post List"
+        read_post: "Read Post"
+        create_post_success: "Post created successfully."
+        delete_post_success: "Post deleted successfully.."
+        update_post_success: "Post modified successfully.."
+        post_post: "Post Post"
+        reply_success: "Replied Successfully"
+        comment_creat: "comment creat"
+        reply_this_floor: "Reply to this floor"
+        add_image: "Upload image"
+        post_was_deleted: "[Post was deleted]"
+        have_no_new_reply: "No new activites since your last read."
+        has_new_replies: "contains new reply."
+        recent_publish_post: "Recent Published Post"
+        post_source: "Post source"
+        published_at: "Published at"
+        tag: "tag"
+        post_submitter: "Post Submitter"
+        submit_success: "successfully submitted，will be added to list after approval."
+        archives: "archives"

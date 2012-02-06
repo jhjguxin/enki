@@ -1,5 +1,28 @@
 "en":
+  menu:
+    topics: "Discussion"
+    wiki: "Wiki"
+    posts: "Posts"
+    pages: "Page"
+    archives: "Archives"
+    search: "Search"
+    tagcloud: "Tagcloud"
+    recent_post: "Recent post"
+    users: "Users"
+    recent_comments: "Recent comments"
+    cpanel: "Control Panel"
+    git_respos: "Github Repos"
+    dashboard: "Dashboard"
+    comments: "Comments"
+    actions: "Actions"
+    health: "Health"
+    nodes: "Nodes"
+    view_sites: "View Sites"
+    my_home_page: "My home page"
+    edit_account_path: "Account Profile"
+    likes: "Favorites"
   common:
+    read_post: "Read post"
     justnow: 'Just Now'
     hour: 'Hour'
     minute: 'Minute'
@@ -18,6 +41,7 @@
     published_at: "Published At"
     register: "Register"
     login: "Sign In"
+    login_as: "Sign in as "
     logining: "Sign In..."
     logout: "Sign Out"
     remember_me: "Remember Me"
@@ -30,7 +54,6 @@
     create_item: "Create Item"
     read_times: "hits"
     confirm_delete: "Are you sure you want to delete?"
-    search: "Search"
     public: "Public"
     create_success: "Created successfully."
     delete_success: "Deleted successfully."
@@ -68,19 +91,6 @@
     uploading: "Uploading"
   sites:
     create: Submit a site
-  menu:
-    topics: "Discussion"
-    wiki: "Wiki"
-    posts: "Posts"
-    pages: "Page"
-    users: "Users"
-    cpanel: "Control Panel"
-    notes: "Notes"
-    nodes: "Nodes"
-    sites: "Sites"
-    my_home_page: "My home page"
-    edit_account_path: "Account Profile"
-    likes: "Favorites"
   comments:
     create_comment: "Comment"
     no_comment: "No Comment at the moment"

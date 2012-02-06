@@ -29,16 +29,16 @@
       </div>
 
       <div id="navigation">
-        <h2>Pages</h2>
+        <h2><%= t('menu.pages') %></h2>
         <ul>
           <% page_links_for_navigation.each do |link| -%>
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
         </ul>
-        <h2><label for="q">Search</label></h2>
+        <h2><label for="q"><%= t('menu.search') %></label></h2>
         <%= render "common/search_form" %>
         <% unless recent_posts_for_navigation.empty? -%>
-          <h2>Recent post<%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
+          <h2><%= t('menu.recent_post') %><%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
           <ul>
             <% recent_posts_for_navigation.each do |post| -%>
               <li><%= link_to(post.title, post_path(post)) %> <i><small>On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></small></i></li>
@@ -47,7 +47,7 @@
           </ul>
         <% end -%>
         <% unless category_links_for_navigation.empty? -%>
-          <h2>Categories</h2>
+          <h2><%= t('menu.tagcloud') %></h2>
           <div id="tagcloud">
             <% category_links_for_navigation.each do |link| -%>
               <%= link_to link.name, link.url, :title=>link.class,:rel=>link.rel %>
@@ -56,7 +56,7 @@
           </div>
         <% end -%>
         <% unless recent_comments_for_navigation.empty? -%>
-          <h2>Recent comments</h2>
+          <h2><%= t('menu.recent_comments') %></h2>
           <ul>
             <% recent_comments_for_navigation.each do |comment| -%>
               <li><%= comment.author %> in <a href="<%= post_path(comment.post) %>#comment-<%= comment.id %>" title=""><%= comment.post.title %></a></li>
@@ -64,20 +64,20 @@
           </ul>
         <% end -%>
         <div id="user_nav">    
-        <h2>Admin</h2>
+        <h2><%= t('menu.cpanel') %></h2>
           <ul>
           <% if user_signed_in? %>    
-             <li>Sign in as <%= link_to show_user(current_user), edit_user_registration_path %>. Not you?    
-            <%= link_to "Sign out", destroy_user_session_path %></li>
+             <li><%= t('common.login_as') %><%= link_to show_user(current_user), edit_user_registration_path %>. Not you?    
+            <%= link_to t("common.logout"), destroy_user_session_path %></li>
           <% else %>
-             <li>Please,<%= link_to "Sign up", new_user_registration_path %> or    
-             <%= link_to "Sign in", new_user_session_path %></li>
+             <li>Please,<%= link_to t("common.register"), new_user_registration_path %> or    
+             <%= link_to t("common.login"), new_user_session_path %></li>
           <% end %>
           <ul> 
         </div>
         <% unless list_user_repos.empty? %>    
         <div id="user_git_repos">    
-        <h2>Github Repos</h2>
+        <h2><%= t('menu.git_respos') %></h2>
           <ul>
             <% list_user_repos("jhjguxin",{:skip_fork=>true,}).each do |repos| -%>
               <li><%= link_to (repos.name,repos.svn_url,{:title=>repos.description})%></li>

@@ -1,0 +1,36 @@
+"zh-CN":
+  activerecord:
+    models:
+      post: 文章
+    attributes:
+      post:
+        create_post: "新建帖子"
+        edit_post: "修改帖子"
+        no_replies: "暂无回复。"
+        check_recent_posts: "查看更多最近发布的帖子..."
+        reply_this_fllor: "回复此楼"
+        comment_creat: "新建留言"
+        tips_for_create_post: "发贴说明"
+        start_a_new_post_button: "发布新帖"
+        subscribe_with_rss: "订阅%{name}社区新贴"
+        submit_reply: "提交回复"
+        hot_post: "活跃帖子"
+        post_list: "主题列表"
+        read_post: "浏览帖子"
+        create_post_success: "帖子创建成功."
+        delete_post_success: "帖子删除成功."
+        update_post_success: "帖子修改成功."
+        post_post: "发帖"
+        reply_success: "回复成功。"
+        reply_this_floor: "回复此楼"
+        add_image: "上传图片"
+        post_was_deleted: "[该主题已被删除]"
+        have_no_new_reply: "在你读过以后还没有新变化"
+        has_new_replies: "有新内容"
+        recent_publish_post: "最近发布的文章"
+        post_source: "文章來源"
+        published_at: "投稿于"
+        tag: "标签"
+        post_submitter: "提交者"
+        submit_success: "投稿成功，需等待审核通过以后才能显示到文章列表。"
+        archives: "归档"

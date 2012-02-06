@@ -1,5 +1,29 @@
 "zh-CN":
+  menu:
+    topics: "社区"
+    wiki: "Wiki"
+    posts: "文章"
+    pages: "页面"
+    archives: "归档"
+    search: "搜索"
+    users: "会员"
+    tagcloud: "标签云"
+    recent_post: "近期文章"
+    recent_comments: "最近留言"
+    cpanel: "后台"
+    git_respos: "Git代码仓库"
+    dashboard: "仪表盘"
+    comments: "留言"
+    actions: "动作"
+    health: "Health"
+    notes: "记事本"
+    nodes: "节点"
+    view_sites: "查看站点"
+    my_home_page: "我的主页"
+    edit_account_path: "个人资料设置"
+    likes: "我的收藏"
   common:
+    read_post: "阅读文章"
     justnow: '刚刚'
     hour: '小时'
     minute: '分钟'
@@ -18,6 +42,7 @@
     published_at: "发表于"
     register: "注册"
     login: "登录"
+    login_as: "登录为"
     logining: "正在登录"
     logout: "退出"
     remember_me: "记住登录状态"
@@ -30,7 +55,6 @@
     create_item: "中发起"
     read_times: "次阅读"
     confirm_delete: "确定要删除么？"
-    search: "搜索"
     public: "公开"
     create_success: "创建成功."
     delete_success: "删除成功."
@@ -69,19 +93,6 @@
     uploading: "正在上传"
   sites:
     create: 提交网站
-  menu:
-    topics: "社区"
-    wiki: "Wiki"
-    posts: "文章"
-    pages: "页面"
-    users: "会员"
-    cpanel: "后台"
-    notes: "记事本"
-    nodes: "节点"
-    sites: "酷站"
-    my_home_page: "我的主页"
-    edit_account_path: "个人资料设置"
-    likes: "我的收藏"
   comments:
     create_comment: "发表评论"
     no_comment: "暂无评论"
@@ -97,3 +108,8 @@
     recent_topics_title: "%{name}社区"
     recent_node_topics_description: "%{name} 社区 %{node_name} 节点最新发贴."
     recent_node_topics_title: "%{name} 社区 %{node_name} 节点"
+  breadcrumbs:
+    homepage: 主页
+    first: First
+    second: Second
+    third: Third
