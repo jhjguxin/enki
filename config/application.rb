@@ -34,7 +34,7 @@ module Enki
     # your can setting Time zone in "config/initializers/set_chronic_timezone.rb"
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[File.join(RAILS_ROOT, 'config', 'locales', '**', '*.{rb,yml}')] 
+    config.i18n.load_path += Dir[File.join(Rails.root.to_s, 'config', 'locales', '**', '*.{rb,yml}')] 
     config.i18n.default_locale = "zh-CN"
 
     # JavaScript files you want as :defaults (application.js is always included).
