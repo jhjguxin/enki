@@ -3,7 +3,7 @@
 <% end -%>
 
 <%= form.inputs do -%>
-  <%= form.input :title %>
-  <%= form.input :slug, :hint => "Leave blank for an auto-generated slug based on the title." %>
-  <%= form.input :body, :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe %>
+  <%= form.input :title,:label => t("activerecord.attributes.page.title")%>
+  <%= form.input :slug,:label => t("activerecord.attributes.page.slug"), :hint => "Leave blank for an auto-generated slug based on the title." %>
+  <%= form.input :body,:label => t("activerecord.attributes.page.body"), :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe %>
 <% end -%>

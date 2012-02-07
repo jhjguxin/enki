@@ -59,6 +59,7 @@ gem 'sunspot_rails', "~> 1.3.0"
 #rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start
 #you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
 #rake sunspot:reindex
+gem "progress_bar", "~> 0.4.0"
 #heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang
 gem 'sunspot_solr'
 #gem "naive-search", "~> 0.1.8"

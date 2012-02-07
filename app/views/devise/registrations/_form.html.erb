@@ -1,16 +1,16 @@
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
+  <div><%= f.label :name,User.human_attribute_name("name")  %><br />
+  <%= f.text_field :name %></div>
 
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+  <div><%= f.label :email,User.human_attribute_name("email")  %><br />
+  <%= f.text_field :email %></div>
 
-  <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password %></p>
+  <div><%= f.label :password,User.human_attribute_name("password") %> <i>(leave blank if you don't want to change it)</i><br />
+  <%= f.password_field :password %></div>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+  <div><%= f.label :password_confirmation,User.human_attribute_name("password_confirmation") %><br />
+  <%= f.password_field :password_confirmation %></div>
 
-  <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></p>
+  <div><%= f.label :current_password,User.human_attribute_name("current_password") %> <i>(we need your current password to confirm your changes)</i><br />
+  <%= f.password_field :current_password %></div>
 
 

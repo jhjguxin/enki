@@ -1,38 +1,45 @@
 Enki::Application.routes.draw do
-  devise_for :users
-  resources :token_authentications, :only => [:create, :destroy]
+  scope "(:locale)", :locale => /en|zh-CN/ do
+    devise_for :users
+    resources :token_authentications, :only => [:create, :destroy]
 
-  match "/search" => "search#index", :as => :search
+    match "/search" => "search#index", :as => :search
 
-  namespace 'admin' do
-    #resource :session
-    resources :posts, :pages do
-      post 'preview', :on => :collection
+    namespace 'admin' do
+      #resource :session
+      resources :posts, :pages do
+        post 'preview', :on => :collection
+      end
+      resources :comments
+      resources :undo_items do
+        post 'undo', :on => :member
+      end
+
+      match 'health(/:action)' => 'health', :action => 'index', :as => :health
+
+      root :to => 'dashboard#show'
     end
-    resources :comments
-    resources :undo_items do
-      post 'undo', :on => :member
+
+    resources :archives, :only => [:index]
+    resources :pages, :only => [:show]
+
+    constraints :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/ do
+      get ':year/:month/:day/:slug/comments'  => 'comments#index'
+      post ':year/:month/:day/:slug/comments' => 'comments#create'
+      get ':year/:month/:day/:slug/comments/new' => 'comments#new'
+      get ':year/:month/:day/:slug' => 'posts#show'
     end
 
-    match 'health(/:action)' => 'health', :action => 'index', :as => :health
+    scope :to => 'posts#index' do
+      get 'posts.:format', :as => :formatted_posts
+      get '(:tag)', :as => :posts
+    end
 
-    root :to => 'dashboard#show'
+    root :to => 'posts#index'
   end
-
-  resources :archives, :only => [:index]
-  resources :pages, :only => [:show]
-
-  constraints :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/ do
-    get ':year/:month/:day/:slug/comments'  => 'comments#index'
-    post ':year/:month/:day/:slug/comments' => 'comments#create'
-    get ':year/:month/:day/:slug/comments/new' => 'comments#new'
-    get ':year/:month/:day/:slug' => 'posts#show'
-  end
-
-  scope :to => 'posts#index' do
-    get 'posts.:format', :as => :formatted_posts
-    get '(:tag)', :as => :posts
-  end
-
-  root :to => 'posts#index'
+  match '/:locale' => 'posts#index'
+  # config/routes.rb
+  #scope "/:locale" do
+    #resources :books
+  #end
 end

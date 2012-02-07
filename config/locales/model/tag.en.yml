@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      tag: "Tag"
+    attributes:
+      tag:
+        create_tag: "New Tag"
+        edit_tag: "Edit Tag"
+        tags_list: "Tag List"
+        read_post: "Read Tag"
+        create_tag_success: "Tag created successfully."
+        delete_tag_success: "Tag deleted successfully.."
+        update_tag_success: "Tag modified successfully.."
+        tag: "tag"

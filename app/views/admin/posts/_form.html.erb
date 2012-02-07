@@ -3,12 +3,12 @@
 <% end -%>
 
 <%= form.inputs :name => "Content" do -%>
-  <%= form.input :title -%>
-  <%= form.input :body, :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe -%>
-  <%= form.input :tag_list, :as => 'string', :required => false, :hint => 'Comma separated: ruby, rails&hellip;'.html_safe -%>
+  <%= form.input :title, :label => t("activerecord.attributes.post.title") -%>
+  <%= form.input :body,:label => t('activerecord.attributes.post.body') , :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe -%>
+  <%= form.input :tag_list, :label => t("activerecord.attributes.post.tag_list"),:as => 'string', :required => false, :hint => 'Comma separated: ruby, rails&hellip;'.html_safe -%>
 <% end -%>
 
-<%= form.inputs :name => "Attachment" do -%>
+<%= form.inputs :name =>t("activerecord.attributes.post.attachment") do -%>
 <div class="newPaperclipFiles">
 
         <%= form.fields_for :attachment do |asset| %>
@@ -43,7 +43,7 @@
 
 <% end -%>
 <%= form.inputs :name => "Other" do -%>
-  <%= form.input :published_at_natural, :label => 'Published at', :as => 'string', :hint => 'Example: now, yesterday, 1 hour from now, '.html_safe + link_to("more&hellip;".html_safe, "http://chronic.rubyforge.org/") -%>
-  <%= form.input :slug, :hint => "Leave blank for an auto-generated slug based on the title." -%>
+  <%= form.input :published_at_natural, :label => t("activerecord.attributes.post.published_at"), :as => 'string', :hint => 'Example: now, yesterday, 1 hour from now, '.html_safe + link_to("more&hellip;".html_safe, "http://chronic.rubyforge.org/") -%>
+  <%= form.input :slug,:label => t("activerecord.attributes.post.slug"), :hint => "Leave blank for an auto-generated slug based on the title." -%>
   <%= form.input :minor_edit, :as => 'boolean', :hint => 'Minor edits will not show up as refreshed in feed readers. Use this to fix spelling mistakes and the like.' unless @post.new_record? -%>
 <% end -%>

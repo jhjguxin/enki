@@ -4,7 +4,7 @@ class Admin::CommentsController < Admin::BaseController
   def index
     @comments = Comment.order("created_at DESC").paginate(
       :include => "post",
-      :page => params[:page]
+      :comment => params[:comment]
     )
   end
 
@@ -18,7 +18,7 @@ class Admin::CommentsController < Admin::BaseController
 
   def update
     if @comment.update_attributes(params[:comment])
-      flash[:notice] = "Updated comment by #{@comment.author}"
+      flash[:notice] =I18n.t("activerecord.attributes.comment.update_comment_success") #"Updated comment by #{@comment.author}"
       redirect_to :action => 'index'
     else
       render :action => 'show'
@@ -30,7 +30,7 @@ class Admin::CommentsController < Admin::BaseController
 
     respond_to do |format|
       format.html do
-        flash[:notice] = "Deleted comment by #{@comment.author}"
+        flash[:notice] =I18n.t("activerecord.attributes.comment.delete_comment_success") #"Deleted comment by #{@comment.author}"
         redirect_to :action => 'index'
       end
       format.json {

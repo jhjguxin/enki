@@ -20,7 +20,8 @@ class Admin::PostsController < Admin::BaseController
     if @post.save
       respond_to do |format|
         format.html {
-          flash[:notice] = "Created post '#{@post.title}'"
+          #flash[:notice] = "Created post '#{@post.title}'"
+          flash[:notice] = I18n.t("activerecord.attributes.post.create_post_success",:title=>@post.title)
           redirect_to(:action => 'show', :id => @post)
         }
       end
@@ -37,7 +38,8 @@ class Admin::PostsController < Admin::BaseController
       delete_empty_attachment
       respond_to do |format|
         format.html {
-          flash[:notice] = "Updated post '#{@post.title}'"
+          #flash[:notice] = "Updated post '#{@post.title}'"
+          flash[:notice] = I18n.t("activerecord.attributes.post.update_post_success",:title=>@post.title)
           redirect_to(:action => 'show', :id => @post)
         }
       end
@@ -82,7 +84,8 @@ class Admin::PostsController < Admin::BaseController
 
     respond_to do |format|
       format.html do
-        flash[:notice] = "Deleted post '#{@post.title}'"
+        #flash[:notice] = "Deleted post '#{@post.title}'"
+        flash[:notice] = I18n.t("activerecord.attributes.post.delete_post_success",:title=>@post.title)
         redirect_to :action => 'index'
       end
       format.json {

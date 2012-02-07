@@ -17,7 +17,7 @@ class Admin::PagesController < Admin::BaseController
     if @page.save
       respond_to do |format|
         format.html {
-          flash[:notice] = "Created page '#{@page.title}'"
+          flash[:notice] = I18n.t("activerecord.attributes.page.create_page_success",:title=>@page.title)#"Created page '#{@page.title}'"
           redirect_to(:action => 'show', :id => @page)
         }
       end
@@ -32,7 +32,7 @@ class Admin::PagesController < Admin::BaseController
     if @page.update_attributes(params[:page])
       respond_to do |format|
         format.html {
-          flash[:notice] = "Updated page '#{@page.title}'"
+          flash[:notice] = I18n.t("activerecord.attributes.page.update_page_success",:title=>@page.title)#"Updated page '#{@page.title}'"
           redirect_to(:action => 'show', :id => @page)
         }
       end
@@ -70,7 +70,7 @@ class Admin::PagesController < Admin::BaseController
 
     respond_to do |format|
       format.html do
-        flash[:notice] = "Deleted page '#{@page.title}'"
+        flash[:notice] = I18n.t("activerecord.attributes.page.delete_page_success",:title=>@page.title)#"Deleted page '#{@page.title}'"
         redirect_to :action => 'index'
       end
       format.json {

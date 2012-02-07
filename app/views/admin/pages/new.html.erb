@@ -1,4 +1,4 @@
-<h1>New page</h1>
+<h1><%= t('activerecord.attributes.page.create_page') %></h1>
 
 <%= semantic_form_for([:admin, @page]) do |form| -%>
   <%= render :partial => 'form', :locals => {:form => form} %>

@@ -1,9 +1,18 @@
-"en":
+en:
   activerecord:
     models:
-      post: Post
+      post: "Post"
     attributes:
       post:
+        title: "title"
+        slug: "slug"
+        body: "content"
+        tag_list: "Tag list"
+        attachment: "Attachment"
+        published_at: "Published at"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        edited_at: "Edited at"
         create_post: "New Post"
         edit_post: "Edit Post"
         no_replies: "No Reply at the moment."
@@ -16,9 +25,9 @@
         hot_post: "Popular Posts"
         post_list: "Post List"
         read_post: "Read Post"
-        create_post_success: "Created post #{@post.title} successfully."
-        delete_post_success: "Deleted post #{@post.title} successfully.."
-        update_post_success: "Modified post #{@post.title}successfully.."
+        create_post_success: "Created post %{title} successfully."
+        delete_post_success: "Deleted post %{title} successfully."
+        update_post_success: "Modified post %{title} successfully."
         post_post: "Post Post"
         reply_success: "Replied Successfully"
         comment_creat: "comment creat"
@@ -29,35 +38,7 @@
         has_new_replies: "contains new reply."
         recent_publish_post: "Recent Published Post"
         post_source: "Post source"
-        published_at: "Published at"
         tag: "tag"
         post_submitter: "Post Submitter"
         submit_success: "successfully submitted，will be added to list after approval."
         archives: "archives"
-
-    models:
-      tag: Tag
-    attributes:
-      tag:
-        create_tag: "New Tag"
-        edit_tag: "Edit Tag"
-        tags_list: "Tag List"
-        read_post: "Read Tag"
-        create_tag_success: "Tag created successfully."
-        delete_tag_success: "Tag deleted successfully.."
-        update_tag_success: "Tag modified successfully.."
-        tag: "tag"
-
-    models:
-      comment: Comment
-    attributes:
-      comment:
-        create_comment: "New Comment"
-        edit_comment: "Edit Comment"
-        comments_list: "Comment List"
-        read_comment: "Read Comment"
-        create_comment_success: "Comment created successfully."
-        delete_comment_success: "Comment deleted successfully.."
-        update_comment_success: "Comment modified successfully.."
-        comment: "comment"
-

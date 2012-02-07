@@ -11,9 +11,9 @@ class SearchController < ApplicationController
       order_by :published_at, :desc
     end
     #breakpoint
-    set_seo_meta("#{t("common.search")}: #{params[:q]}")
+    set_seo_meta("#{t("menu.search")}: #{params[:q]}")
     #drop_breadcrumb("#{t("common.search")}: #{params[:q]}")
-    add_breadcrumb("#{t("common.search")}: #{params[:q]}",search_path)
+    add_breadcrumb("#{t("menu.search")}: #{params[:q]}",search_path)
 
   end
 

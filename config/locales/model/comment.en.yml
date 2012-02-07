@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      comment: "Comment"
+    attributes:
+      comment:
+        create_comment: "New Comment"
+        edit_comment: "Edit Comment"
+        comments_list: "Comment List"
+        read_comment: "Read Comment"
+        create_comment_success: "Comment created successfully."
+        delete_comment_success: "Comment deleted successfully.."
+        update_comment_success: "Comment modified successfully.."
+        comment: "comment"

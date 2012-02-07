@@ -1,4 +1,4 @@
-<h1>New post</h1>
+<h1><%= t('activerecord.attributes.post.create_post') %></h1>
 
 <%= semantic_form_for([:admin, @post],:html => {:multipart => true}) do |form| -%>
   <%= render :partial => 'form', :locals => {:form => form,:post=>@post} -%>

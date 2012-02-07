@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      page: "页面"
+    attributes:
+      page:
+        title: "标题"
+        slug: "slug"
+        body: "内容"
+        created_at: "创建于"
+        updated_at: "更新于"
+        create_page: "新建页面"
+        edit_page: "修改页面"
+        create_page_success: "页面%{title}创建成功."
+        delete_page_success: "页面%{title}删除成功."
+        update_page_success: "页面%{title}修改成功."

@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      page: "page"
+    attributes:
+      page:
+        title: "title"
+        slug: "slug"
+        body: "content"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        edited_at: "Edited at"
+        create_page: "New Page"
+        edit_page: "Edit Page"
+        create_page_success: "Created page %{title} successfully."
+        delete_page_success: "Deleted page %{title} successfully."
+        update_page_success: "Modified page %{title} successfully."

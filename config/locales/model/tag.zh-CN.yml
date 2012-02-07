@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    models:
+      tag: "标签"
+    attributes:
+      tag:
+        create_tag: "新建标签"
+        edit_tag: "修改标签"
+        tags_list: "标签列表"
+        create_tag_success: "标签创建成功."
+        delete_tag_success: "标签删除成功."
+        update_tag_success: "标签修改成功."
+        tag: "标签"

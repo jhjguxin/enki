@@ -2,7 +2,7 @@
   <%= javascript_include_tag('admin/posts.js') %>
 <% end -%>
 
-<h1>Your posts</h1>
+<h1><%= Post.model_name.human %></h1>
 <table>
   <thead>
     <tr>
