@@ -1,7 +1,8 @@
 source 'http://rubygems.org'
 
 #gem 'rails', '3.0.4'
-gem "rails", "~> 3.0.11"
+#gem "rails", "~> 3.0.11"
+gem "rails", "~> 3.1.3"
 gem 'rake', '~> 0.9.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -16,6 +17,14 @@ platforms :jruby do
   gem 'jruby-openssl'
 end
 
+group :assets do
+  gem 'sass-rails', '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+
+gem 'twitter-bootstrap-rails'
 # Use unicorn as the web server
 # gem 'unicorn'
 
