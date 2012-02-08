@@ -29,7 +29,7 @@
     </ul>
   </div>
   <% end %>
-<%= form_for([@post, @comment]) do |form| -%>
+<%= form_for(@comment, :url => [@post, @comment]) do |form| -%>
   <div>
     <p><%= label_tag(:comment_author, "author") %><%= form.text_field 'author' %></p>
     <p><%= label_tag(:comment_author_url, "website") %><%= form.text_field 'author_url' %></p>
