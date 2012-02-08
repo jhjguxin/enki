@@ -35,7 +35,7 @@ gem "coderay", "~> 1.0.5"
 gem 'formtastic'
 
 gem 'devise', '~> 1.1.5'
-#gem "rack-google_analytics", "~> 1.0.2"
+gem "google-analytics-rails", "~> 0.0.1"
 # permission
 gem 'cancan', '1.4.1'
 

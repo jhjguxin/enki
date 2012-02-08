@@ -47,4 +47,6 @@ Enki::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => 'localhost:8088' }
+  #Rails helpers to manage google analytics tracking
+  GA.tracker = 'UA-25901353-4'
 end
