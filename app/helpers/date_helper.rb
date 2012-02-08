@@ -9,6 +9,6 @@ module DateHelper
   end
 
   def format_comment_date(date)
-    format_post_date(date) + " at " + date.strftime(I18n.t "time.formats.long")
+    "at " + date.strftime(I18n.t "time.formats.long")
   end
 end
