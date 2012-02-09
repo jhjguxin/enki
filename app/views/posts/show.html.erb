@@ -1,40 +1,20 @@
 <% content_for(:head) do -%>
   <%= javascript_include_tag 'common' %>
   <%= javascript_include_tag 'live-comment-preview' %>
+
 <% end -%>
 <% content_for(:page_title) do -%>
-<%= post_title(@post) -%>
+  <%= post_title(@post) -%>
 <% end -%>
-<%= render :partial => 'posts/post', :locals => {:post => @post} %>
-<div class="commentlist" name="comments">
-<a name="comments" href="#comments"></a>
-<ol class="commentlist">
-  <% @post.approved_comments.each do |comment| -%>
-  <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
-    <%= render :partial => 'comments/comment', :locals => {:comment => comment} %>
-  </li>
-  <% end -%>
-</ol>
+<div id="topic_show" class="topics box">
+  <%= render :partial => 'posts/post', :locals => {:post => @post} %>
+  <div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
 </div>
-<div class="related">Looking for more? Head on over to the <%= link_to("archives", archives_path) %>.</div>
-<h2>Post a comment</h2>
-  <% if @comment.errors.any? %>
-  <a name="error_explanation" href="#error_explanation"></a>
-  <div class="errors" name="error_explanation">
-    <h3>Comment not added!</h3>
-    <ul>
-      <% @comment.errors.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-<%= form_for(@comment, :url => [@post, @comment]) do |form| -%>
-  <div>
-    <p><%= label_tag(:comment_author, "author") %><%= form.text_field 'author' %></p>
-    <p><%= label_tag(:comment_author_url, "website") %><%= form.text_field 'author_url' %></p>
-    <p><%= label_tag(:comment_author_email, "email") %><%= form.text_field 'author_email'%></p>
-    <p><%= label_tag(:comment_body, "cotent") %><%= form.text_area 'body' %><br><small>(<a href="http://lesstile.rubyforge.org">lesstile enabled</a> - surround code blocks with ---)</small></p>
-    <p><%= submit_tag "Add Comment" %></p>
-  </div>
-<% end -%>
+
+<div id="replies" class="box">
+  <%= render :partial => 'comments/comments_list', :locals => {:post => @post} %>
+</div>
+
+<div id="reply" class="form box">
+  <%= render :partial => 'comments/edit_comment', :locals => {:post => @post,:comment=>@comment} %>
+</div>

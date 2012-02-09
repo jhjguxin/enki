@@ -73,7 +73,7 @@ gem "progress_bar", "~> 0.4.0"
 gem 'sunspot_solr'
 #gem "naive-search", "~> 0.1.8"
 #麵包屑
-gem "breadcrumbs_on_rails", "~> 2.1.0"
+gem "breadcrumbs", "~> 0.1.6"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

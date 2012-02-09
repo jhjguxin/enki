@@ -1,0 +1,21 @@
+<h2>Post a comment</h2>
+<% if @comment.errors.any? %>
+  <a name="error_explanation" href="#error_explanation"></a>
+  <div class="errors" name="error_explanation">
+  <h3>Comment not added!</h3>
+  <ul>
+    <% @comment.errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+<div id="reply_form" class="reply_form box">
+<%= form_for(@comment, :url => [@post, @comment]) do |form| -%>
+    <p><%= label_tag(:comment_author, "author") %><%= form.text_field 'author' %></p>
+    <p><%= label_tag(:comment_author_url, "website") %><%= form.text_field 'author_url' %></p>
+    <p><%= label_tag(:comment_author_email, "email") %><%= form.text_field 'author_email'%></p>
+    <p><%= label_tag(:comment_body, "cotent") %><%= form.text_area 'body' %><br><small>(<a href="http://lesstile.rubyforge.org">lesstile enabled</a> - surround code blocks with ---)</small></p>
+    <p><%= submit_tag "Add Comment" %></p>
+<% end -%>
+</div>

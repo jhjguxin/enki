@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <title><%= html_title yield(:page_title) %></title>
   <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "front" %>
+  <%= stylesheet_link_tag "topics" %>
   <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'rails' %>
   <%= javascript_include_tag 'tagcloud' %>
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
@@ -13,86 +15,44 @@
   <%= yield(:head) %>
 </head>
 <body>
-  <div id="page_container">
-    <div id="content">
-      <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
-
-      <div id="main">
-        <div class="container">
-          <%= render_breadcrumbs %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-
-
-        <%= yield %>
+  <div class="topbar" data-dropdown="dropdown">
+    <div class="topbar-inner">
+      <div class="container">
+        <%= render :partial => 'common/menu' %>
       </div>
-
-      <div id="navigation">
-        <h2><%= t('menu.pages') %></h2>
-        <ul>
-          <% page_links_for_navigation.each do |link| -%>
-            <li><%= link_to(link.name, link.url) %></li>
-          <% end -%>
-        </ul>
-        <h2><label for="q"><%= t('menu.search') %></label></h2>
-        <%= render "common/search_form" %>
-        <% unless recent_posts_for_navigation.empty? -%>
-          <h2><%= t('menu.recent_post') %><%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
-          <ul>
-            <% recent_posts_for_navigation.each do |post| -%>
-              <li><%= link_to(post.title, post_path(post)) %> <i><small>On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></small></i></li>
-
-            <% end -%>
-          </ul>
-        <% end -%>
-        <% unless category_links_for_navigation.empty? -%>
-          <h2><%= t('menu.tagcloud') %></h2>
-          <div id="tagcloud">
-            <% category_links_for_navigation.each do |link| -%>
-              <%= link_to link.name, link.url, :title=>link.class,:rel=>link.rel %>
-
-            <% end -%>
-          </div>
-        <% end -%>
-        <% unless recent_comments_for_navigation.empty? -%>
-          <h2><%= t('menu.recent_comments') %></h2>
-          <ul>
-            <% recent_comments_for_navigation.each do |comment| -%>
-              <li><%= comment.author %> in <a href="<%= post_path(comment.post) %>#comment-<%= comment.id %>" title=""><%= comment.post.title %></a></li>
-            <% end -%>
-          </ul>
-        <% end -%>
-        <div id="user_nav">    
-        <h2><%= t('menu.cpanel') %></h2>
-          <ul>
-          <% if user_signed_in? %>    
-             <li><%= t('common.login_as') %><%= link_to show_user(current_user), edit_user_registration_path %>. Not you?    
-            <%= link_to t("common.logout"), destroy_user_session_path %></li>
-            <li><%= link_to t("menu.manage_site"), admin_root_path %></li>
-          <% else %>
-             <li>Please,<%= link_to t("common.register"), new_user_registration_path %> or    
-             <%= link_to t("common.login"), new_user_session_path %></li>
-          <% end %>
-          <ul> 
-        </div>
-        <% unless list_user_repos.empty? %>    
-        <div id="user_git_repos">    
-        <h2><%= t('menu.git_respos') %></h2>
-          <ul>
-            <% list_user_repos("jhjguxin",{:skip_fork=>true,}).each do |repos| -%>
-              <li><%= link_to (repos.name,repos.svn_url,{:title=>repos.description})%></li>
-            <% end -%>
-          <ul> 
-        </div>
-        <% end %>
-
-
-      </div>
-
-      <div id="footer"><%= enki_config[:title] %> &#169; <%= enki_config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom" %>. Powered by <a href="<%= enki_config[:url]%>" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.<br><%= t('common.available_content') %><%= link_to t("common.zh-cn"), root_url(:locale => 'zh-CN') %>,<%= link_to t("common.en"),root_url(:locale => 'en') %></div>
     </div>
   </div>
 
+  <div class="container">
+    <div class="content">
+      <div class="page-header">
+        <%= render :partial => 'common/header' %>
+      </div>
+
+      <ul class="breadcrumb menu clearfix">
+        <%= breadcrumbs.render(:format => :inline, :separator => '>>') %>
+      </ul>
+
+      <div id="main" class="container-fluid">
+        <div class="sidebar">
+          <%= render :partial => 'common/sidebar' %>
+        </div>
+        <div class="content">
+          <div class="content box">
+            <div id="node_info">
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+            </div>
+            <div class="content box">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <%= render :partial => 'common/footer' %>
+    </footer>
 </body>
 </html>

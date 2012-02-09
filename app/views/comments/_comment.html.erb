@@ -1,4 +1,10 @@
-  <cite><%= gravatar_image_tag(comment.author_email.gsub('spam', 'mdeering'), :title => comment.author) %></cite> says:
-  <br>
-  <small class="commentmetadata"><a href="#comment-<%= comment.id %>" title=""><%= format_comment_date(comment.created_at) %></a></small>
+<div class="info">
+  <cite>
+    <%= gravatar_image_tag(comment.author_email.gsub('spam', 'mdeering'), :title => comment.author) %>
+    <a href="#comment-<%= comment.id %>" title=""><%= format_comment_date(comment.created_at) %></a>
+  </cite> says:
+</div>
+<div class="body">
+
   <p><%=raw comment.body_html %></p>
+</div>

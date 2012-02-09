@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_locale
- 
+  before_filter :add_initial_breadcrumbs
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -12,10 +13,15 @@ class ApplicationController < ActionController::Base
   end
 
   # mv to posts_controller
-  add_breadcrumb I18n.t("breadcrumbs.homepage"), @root_path
+
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => t("common.access_denied")
+  end
+
+  private
+  def add_initial_breadcrumbs
+    breadcrumbs.add :homepage, root_path
   end
 
   protected

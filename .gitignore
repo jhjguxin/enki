@@ -1,6 +1,7 @@
 log/**/*
 log
 solr/data/
+solr/data/**/*
 public/system/**/*
 public/system
 tmp/**/*

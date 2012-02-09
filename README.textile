@@ -243,3 +243,25 @@ rake sunspot:reindex
 如果你想看到运行日志，把服务跑在前端。可以使用一下命令:
 rake sunspot:solr:run
 使用以上命令，就能完成对Sunspot的控制。
+
+h3. when you get "RSolr::Error::Http (RSolr::Error::Http - 500 Internal Server Error
+
+<pre>
+<code>Error: Severe errors in solr configuration." in log
+please navigation to "localhost:8082/solr" check more info:
+there recomment method is
+ps -ef|grep solr
+kill all solr's process
+rm solr folder in enki root dir.reinstall the solr by type:
+#Generate a default configuration file:
+rails generate sunspot_rails:install
+</code>
+
+If sunspot_solr was installed, start the packaged Solr distribution with:
+
+<code>bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground</code>
+
+Now that Sunspot knows how to index the Post model, we need to get the existing data into Solr. Any time a Post is created, updated, or destroyed, Sunspot::Rails will automatically make the change to the index; you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
+
+<code>$ rake sunspot:reindex</code>
+</pre>

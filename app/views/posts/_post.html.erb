@@ -1,5 +1,10 @@
-<h2><%= link_to(post.title, post_path(post)) %></h2>
-<div class="entrybody">
-  <%=raw post.body_html %>
+<div class="topic">
+  <div class="infos">
+    <h1 class="title"><%= link_to(post.title, post_path(post)) %></h1>
+
+    <div class="body">
+      <%=raw post.body_html %>
+    </div>
+    <%= render :partial => 'posts/post_meta', :locals => {:post => post} %>
+  <div>
 </div>
-<%= render :partial => 'posts/post_meta', :locals => {:post => post} %>

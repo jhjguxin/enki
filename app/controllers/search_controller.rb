@@ -13,7 +13,7 @@ class SearchController < ApplicationController
     #breakpoint
     set_seo_meta("#{t("menu.search")}: #{params[:q]}")
     #drop_breadcrumb("#{t("common.search")}: #{params[:q]}")
-    add_breadcrumb("#{t("menu.search")}: #{params[:q]}",search_path)
+    breadcrumbs.add("#{t("menu.search")}: #{params[:q]}",search_path)
 
   end
 
