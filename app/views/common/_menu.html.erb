@@ -1,12 +1,24 @@
 <ul id="menu" class="nav">
   <li id="welcome"><%= link_to I18n.t("breadcrumbs.homepage"), root_path %></li>
+      <% if user_signed_in? %>
+        <li id="user" class="dropdown" data-dropdown="dropdown">
+          <%= link_to "user", edit_user_registration_path,:class=>"dropdown-toggle" %>
+          <ul class="dropdown-menu">
+            <li><%= link_to t('menu.my_home_page'), edit_user_registration_path %></li>
+            <li><%= link_to t('common.logout'), destroy_user_session_path %></li>
+          </ul>
+        <li>
+      <% end %>
   <li id="posts" class="dropdown" data-dropdown="dropdown">
-  <a href="#" class="dropdown-toggle">Posts</a>
-  <ul class="dropdown-menu">
-    <li><%= link_to 'Post List', @post_index_path, :class => 'dropdown' %></li>
-    <li class="divider"></li>
-    <li><%= link_to 'New Posts', @new_post_path, :class => 'dropdown' %></li>
-  </ul>
+    <a href="#" class="dropdown-toggle">Posts</a>
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Post List', @post_index_path, :class => 'dropdown' %></li>
+      <li class="divider"></li>
+      <li><%= link_to 'New Posts', @new_post_path, :class => 'dropdown' %></li>
+    </ul>
   <li>
+  <li id="welcome"><%= link_to "wiki", root_path %></li>
+  <li id="welcome"><%= link_to "cool site", root_path %></li>
+
   <%= render "common/search_form" %>
 </ul>

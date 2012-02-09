@@ -12,7 +12,11 @@
 </div>
 
 <div id="replies" class="box">
+<% if @post.approved_comments.empty? -%>
+	<p>There are no comment yet.</p>
+<% else -%>
   <%= render :partial => 'comments/comments_list', :locals => {:post => @post} %>
+<% end -%>
 </div>
 
 <div id="reply" class="form box">

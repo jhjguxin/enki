@@ -10,7 +10,7 @@ author:
       - http://enkiblog.com
       - http://secondaryopenid.com
       - http://francisjiang.heroku.com/
-
+show_git_repos: false
 # Delete the following section if your site will not be acting as an OpenID delegate (http://wiki.openid.net/Delegation)
 # If you're deploying with mongrel, make sure you read http://rhnh.net/2008/04/13/nginx-openid-delegation-and-yadis
 #open_id_delegation:

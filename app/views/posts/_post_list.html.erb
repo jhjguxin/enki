@@ -1,5 +1,9 @@
+<div class="topic">
+  <div class="infos">
 <h2><%= link_to(post.title, post_path(post)) %></h2>
 <div class="entrybody">
   <%= (truncate(strip_tags(post.body), :length => 300, :omission => '...')).html_safe %>
 </div>
 <%= render :partial => 'posts/post_meta', :locals => {:post => post} %>
+  </div>
+</div>

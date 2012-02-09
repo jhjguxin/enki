@@ -8,8 +8,8 @@
 </div>
 
 <div class="sidebar_recent_posts box">
-  <% unless recent_posts_for_navigation.empty? -%>
     <h2><%= t('menu.recent_post') %><%= link_to(image_tag("rss.png"),formatted_posts_path(:format => 'atom'),:title=>"feed recent posts") %></h2>
+  <% unless recent_posts_for_navigation.empty? -%>
     <ul>
       <% recent_posts_for_navigation.each do |post| -%>
         <li><%= link_to(post.title, post_path(post)) %> <i><small>On <%= format_post_date(post.published_at) %> by <%= show_user(post.user) %></small></i></li>
@@ -19,8 +19,8 @@
 </div>
 
 <div class="sidebar_tagcloud box">
-  <% unless category_links_for_navigation.empty? -%>
     <h2><%= t('menu.tagcloud') %></h2>
+  <% unless category_links_for_navigation.empty? -%>
     <div id="tagcloud">
       <% category_links_for_navigation.each do |link| -%>
         <%= link_to link.name, link.url, :title=>link.class,:rel=>link.rel %>
@@ -29,8 +29,8 @@
   <% end -%>
 </div>
 <div class="sidebar_recent_comments box">
-  <% unless recent_comments_for_navigation.empty? -%>
     <h2><%= t('menu.recent_comments') %></h2>
+  <% unless recent_comments_for_navigation.empty? -%>
     <ul>
       <% recent_comments_for_navigation.each do |comment| -%>
         <li><%= comment.author %> in <a href="<%= post_path(comment.post) %>#comment-<%= comment.id %>" title=""><%= comment.post.title %></a></li>
@@ -38,16 +38,18 @@
     </ul>
   <% end -%>
 </div>
-<div class="sidebar_git_repos box">
-  <% unless list_user_repos("jhjguxin",{:skip_fork=>true,}).empty? %>    
+
+<% unless list_user_repos("jhjguxin",{:skip_fork=>true,}).empty? %>    
+  <div class="sidebar_git_repos box">
     <h2><%= t('menu.git_respos') %></h2>
     <ul>
       <% list_user_repos("jhjguxin",{:skip_fork=>true,}).each do |repos| -%>
         <li><%= link_to (repos.name,repos.svn_url,{:title=>repos.description})%></li>
       <% end -%>
     </ul> 
-  <% end %>
-</div>
+  </div>
+<% end %>
+
 <div class="sidebar_cpanel box">
   <h2><%= t('menu.cpanel') %></h2>
   <ul>

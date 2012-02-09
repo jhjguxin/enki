@@ -5,7 +5,7 @@
 	<p>There are no posts yet.</p>
 <% else -%>
 	<% @posts.each do |post| -%>
-	<div class="post post-<%= post.id %>">
+	<div id="topic_show <%= post.id %>" class="topics box">
 	  <%= render :partial => 'posts/post_list', :locals => {:post => post} %>
 	</div>
 	<% end -%>

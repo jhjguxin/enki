@@ -2,6 +2,11 @@ module GitHelper
   def list_user_repos(user="jhjguxin", options={})
     skip_fork = options[:skip_fork] || false
     sort_by = options[:sort_by] || "created_at"
+
+    #breakpoint
+    if enki_config[:show_git_repos]==false
+      return repos=[]
+    end
     github = Github.new
     begin 
       repos=github.repos.list_repos :user => user
