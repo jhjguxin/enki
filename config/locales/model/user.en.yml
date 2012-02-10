@@ -9,5 +9,8 @@ en:
         password: "password"
         password_confirmation: "Password confirmation"
         current_password: "Current password"
+        create_user: "Create User"
+        edit_user: "Edit User"
+        remember_me: "Remember Me"
         title: "title"
         title: "title"

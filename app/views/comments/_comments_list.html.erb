@@ -1,4 +1,3 @@
-<a name="comments" href="#comments"></a>
 <ol class="commentlist">
   <% @post.approved_comments.each do |comment| -%>
   <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">

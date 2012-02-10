@@ -1,0 +1,7 @@
+zh-CN:
+  paginate:
+    first_page_label: "首页"
+    last_page_label: "尾页"
+    previous_page_label: "« 上一页"
+    next_page_label: "下一页 »"
+    pager: "%{page}"

@@ -1,23 +1,26 @@
 <ul id="menu" class="nav">
   <li id="welcome"><%= link_to I18n.t("breadcrumbs.homepage"), root_path %></li>
       <% if user_signed_in? %>
-        <li id="user" class="dropdown" data-dropdown="dropdown">
-          <%= link_to "user", edit_user_registration_path,:class=>"dropdown-toggle" %>
+        <li id="user-menu" class="dropdown" data-dropdown="dropdown">
+          <%= link_to User.model_name.human, edit_user_registration_path,:class=>"dropdown-toggle" %>
           <ul class="dropdown-menu">
             <li><%= link_to t('menu.my_home_page'), edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to t("menu.manage_site"), admin_root_path %></li>
             <li><%= link_to t('common.logout'), destroy_user_session_path %></li>
           </ul>
         <li>
       <% end %>
-  <li id="posts" class="dropdown" data-dropdown="dropdown">
-    <a href="#" class="dropdown-toggle">Posts</a>
+  <li id="post-menu" class="dropdown" data-dropdown="dropdown">
+    <a href="#" class="dropdown-toggle"><%= Post.model_name.human%></a>
     <ul class="dropdown-menu">
-      <li><%= link_to 'Post List', @post_index_path, :class => 'dropdown' %></li>
+      <% if @post and @post.user==current_user %>
+        <li><%= link_to t('activerecord.attributes.post.edit_post'), edit_admin_post_path(@post), :class => 'dropdown' %></li>
+      <% end %>
       <li class="divider"></li>
-      <li><%= link_to 'New Posts', @new_post_path, :class => 'dropdown' %></li>
+      <li><%= link_to t('activerecord.attributes.post.create_post'), new_admin_post_path, :class => 'dropdown' %></li>
     </ul>
   <li>
-  <li id="welcome"><%= link_to "wiki", root_path %></li>
   <li id="welcome"><%= link_to "cool site", root_path %></li>
 
   <%= render "common/search_form" %>

@@ -1,7 +1,7 @@
 zh-CN:
   activerecord:
     models:
-      User: "用户"
+      user: "用户"
     attributes:
       user:
         name: "姓氏"
@@ -9,6 +9,9 @@ zh-CN:
         password: "密码"
         password_confirmation: "确认密码"
         current_password: "当前密码"
+        create_user: "用户注册"
+        edit_user: "编辑用户"
+        remember_me: "记住登录状态"
         title: "title"
         title: "title"
 

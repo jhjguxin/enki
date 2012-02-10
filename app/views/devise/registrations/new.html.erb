@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2><%= User.human_attribute_name("create_user") %> </h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -15,7 +15,7 @@
   <div><%= f.label :password_confirmation,User.human_attribute_name("password_confirmation") %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <p><%= f.submit "Sign up" %></p>
+  <p><%= f.submit t("common.register") %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
