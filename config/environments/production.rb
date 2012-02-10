@@ -31,11 +31,13 @@ Enki::Application.configure do
   config.assets.js_compressor  = :uglifier
   config.assets.css_compressor = :scss
 
-  #"Lighttpd has this feature and there is a mod_xsendfile for Apache2. Nginx also has this feature, but implemented a little bit differently. In Nginx this feature is called X-Accel-Redirect."
-  config.action_dispatch.x_sendfile_header = "X-Sendfile" 
-  config.serve_static_assets = true
+
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
+  config.action_dispatch.x_sendfile_header = "X-Sendfile" 
+  config.serve_static_assets = true
+
+  #"Lighttpd has this feature and there is a mod_xsendfile for Apache2. Nginx also has this feature, but implemented a little bit differently. In Nginx this feature is called X-Accel-Redirect."
 
   #config.serve_static_assets = true
   # Use 'X-Accel-Redirect' for nginx
