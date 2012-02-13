@@ -44,7 +44,7 @@
     <h2><%= t('menu.git_respos') %></h2>
     <ul>
       <% list_user_repos("jhjguxin",{:skip_fork=>true,}).each do |repos| -%>
-        <li><%= link_to (repos.name,repos.svn_url,{:title=>repos.description})%></li>
+        <li><%= link_to(repos.name,repos.svn_url,{:title=>repos.description})%></li>
       <% end -%>
     </ul> 
   </div>

@@ -1,5 +1,6 @@
 Given /I am logged in/ do
-  post '/admin/session', :bypass_login => '1'
+  #post '/admin/session', :bypass_login => '1'
+  post '/zh-CN/users/sign_in'
 end
 
 Then /a RuntimeError is thrown when I press "(.*)"/ do |button|

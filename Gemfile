@@ -43,7 +43,7 @@ gem "coderay", "~> 1.0.5"
 #gem 'lesstile'
 gem 'formtastic'
 
-gem 'devise', '~> 1.1.5'
+gem 'devise', '~> 1.5.3'
 gem "google-analytics-rails", "~> 0.0.1"
 # permission
 gem 'cancan', '1.4.1'
@@ -60,7 +60,8 @@ gem 'remotipart', '~> 1.0'
 gem "thin", "~> 1.3.1"
 #git api
 gem "github_api", "~> 0.4.1"
-
+#The Exception Notifier plugin provides a mailer object and a default set of templates for sending email notifications when errors occur in a Rails application. 
+gem "exception_notification", "~> 2.5.2"
 
 # 全文搜索 sunspot 是一个java程序 在heroku中使用需要付费这里可以使用naive-search替代
 gem 'sunspot_rails', "~> 1.3.0"
@@ -80,6 +81,8 @@ gem "breadcrumbs", "~> 0.1.6"
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'cucumber-rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
   gem 'webrat'
   gem 'factory_girl'
   gem 'rspec'

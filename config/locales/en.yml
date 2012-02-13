@@ -36,7 +36,7 @@
     post_by: "Post by"
     comment: "comment"
     tag: "tag"
-    tag: "Tagged:"
+    tagged: "Tagged:"
     read_post: "Read post"
     latest_posts: "Latest Posts"
     latest_comments: "Latest Comments"

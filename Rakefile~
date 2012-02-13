@@ -3,6 +3,12 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
-require 'rake/testtask'
-require 'rdoc/task'
+
+desc "start the solr"
+task :launchSolr do
+  puts "start the solr"
+  rake sunspot:solr:start 
+end
+
+
 Enki::Application.load_tasks

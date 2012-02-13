@@ -1,0 +1,5 @@
+please install and launch the solr
+Generate a default configuration file:
+rails generate sunspot_rails:install
+If sunspot_solr was installed, start the packaged Solr distribution with:
+rake sunspot:solr:start RAILS_ENV=test

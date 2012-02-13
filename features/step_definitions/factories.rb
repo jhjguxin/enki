@@ -1,4 +1,9 @@
 require 'factory_girl'
+Factory.define(:user) do |a|
+  a.name   'testuser'
+  a.email 'enki@enkiblog.com'
+  a.password '123456'
+end
 
 Factory.define(:tag) do |a|
   a.name 'Tag'
@@ -8,6 +13,7 @@ Factory.define(:post) do |a|
   a.title     'A post'
   a.slug      'a-post'
   a.body      'This is a post'
+  a.user
 
   a.published_at 1.day.ago
   a.created_at   1.day.ago
@@ -21,3 +27,5 @@ Factory.define(:comment) do |a|
   a.body     'I find this article thought provoking'
   a.association :post
 end
+
+
