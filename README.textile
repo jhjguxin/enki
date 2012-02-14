@@ -265,3 +265,13 @@ Now that Sunspot knows how to index the Post model, we need to get the existing 
 
 <code>$ rake sunspot:reindex</code>
 </pre>
+
+h2. the feature in the future
+
+1. add reploy to reploy
+2. finish the permission control
+3. 使用验证码
+4. Mention @somebody. They're notified eg. When you @mention a GitHub username anywhere in the context of an issue or pull request, that person is notified and subscribed to future updates.
+5. @自动匹配用户名功能
+
+

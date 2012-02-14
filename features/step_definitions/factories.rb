@@ -13,7 +13,7 @@ Factory.define(:post) do |a|
   a.title     'A post'
   a.slug      'a-post'
   a.body      'This is a post'
-  a.user
+  a.association :user
 
   a.published_at 1.day.ago
   a.created_at   1.day.ago
