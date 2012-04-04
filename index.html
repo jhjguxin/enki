@@ -1,0 +1,335 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Enki</title>
+  <meta name="description" content="my first rails project base on enki">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Enki</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">my first rails project base on enki</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/jhjguxin/enki/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/jhjguxin/enki/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/jhjguxin/enki" class="code">fork Enki on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>Enki</h1>
+
+<p>A Ruby on Rails blogging app for the fashionable developer.</p>
+
+<p>Preferences are for the masses. Any real coder knows the easiest and best way to customize something is by <em>hacking code</em>. Because you want your blog to be you, not bog standard install #4958 with 20 posts per page instead of 15. For this you need a <em>clean, simple, easy to understand code base</em> that stays out of your way. No liquid drops and templates hindering your path, no ugly PHP(Hypertext Preprocessor) stylings burning your eyeballs.</p>
+
+<h2>Quick Start</h2>
+
+<p>make sure you are using <strong>ruby 1.8.7</strong>,you can controle ruby's version by rvm</p>
+
+<pre><code>  git clone git://github.com/jhjguxin/enki.git
+  cd enki
+  git checkout -b myblog # Create a new work branch
+  bundle install         # Install all the required gems
+
+  cp config/database.example.yml config/database.yml
+  # Edit config/enki.yml and config/database.yml to taste
+
+  # Next step needs libxml2 and libxslt1 and their headers
+  # On Debian-based systems: apt-get install libxml2-dev libxslt1-dev
+  # On Mac OS X: no action required
+
+  rake db:migrate
+  #may be here will display some 'WARNING' message,but it no effect with rails's wrok,like
+  ***WARNING:*** 'require 'rake/rdoctask'' is deprecated.  Please use 'require 'rdoc/task' (in RDoc 2.4.2+)' instead.
+
+  rake            # Run tests
+  rails server    # Start the server
+  # Load http://localhost:3000/admin in your browser</code></pre>
+
+<p>Or for bonus points, fork "enki at github":<a href="https://github.com/jhjguxin/enki/commits/master">https://github.com/jhjguxin/enki/commits/master</a> and clone that instead.</p>
+
+<h2>More info</h2>
+
+<p>Enki is a compact, easily extendable base for your blog. It does this by being highly opinionated, for example:</p>
+
+<ul>
+<li>Public facing views should adhere to standards (XHTML(eXtensible Hypertext Markup Language), Atom)</li>
+<li>/yyyy/mm/dd/post-title is a good URL for your posts</li>
+<li>Live comment preview should be provided by default</li>
+<li>Google does search better than you or I</li>
+<li>You don't need a plugin system when you've got decent source control</li>
+<li>#If you're not using OpenID you're a chump</li>
+<li>Because I'm a chump,so I decide to use devise </li>
+<li>Hacking code is the easiest way to customize something</li>
+</ul><h2>How it differs from Mephisto</h2>
+
+<p>Mephisto is feature packed and quite customizable. It can however be daunting trying to find your way around the code, which isn’t so good if you’re trying to hack in your own features. Enki strips out a lot of the features that you probably don’t need (multiple authors and liquid templates, for example), and focuses on keeping a tight code base that is easy to comprehend and extend.</p>
+
+<h2>How it differs from SimpleLog</h2>
+
+<p>Enki embodies much of the philosophy of SimpleLog, but does so in a style that is much more consistent with Rails best practices, making it easier to understand and hack the code.</p>
+
+<h2>Compatibility</h2>
+
+<p>Uses rails 3. Runs on MySQL or Postgres. Works on heroku.</p>
+
+<h2>Contributors, these guys rock</h2>
+
+<pre><code>git log | grep Author | sort | uniq</code></pre>
+
+<p>If you want to help out, try tackling an "open issue":<a href="https://github.com/jhjguxin/enki/issues">https://github.com/jhjguxin/enki/issues</a>. Please include specs for any fixes. Enki is by design feature light. Unless you feel very strongly your feature should be in core, add a link to your fork in the wiki instead.</p>
+
+<h2>License</h2>
+
+<p>GPL(General Public License) - See LICENSE</p>
+
+<p>Admin design heavily inspired by "Habari":<a href="http://www.habariproject.org/en/">http://www.habariproject.org/en/</a></p>
+
+<h2>QA</h2>
+
+<p>Showing the devise edit password screen?
+In my rails 3 app using devise, I want to provide a link for users to edit their password.</p>
+
+<p>I have a standard link that points to: /users/password/edit ... Log output below(#all action in PasswordsController )</p>
+
+<pre><code>Started GET "/users/password/edit" for 127.0.0.1 at 2011-08-10 10:11:46 -0700  
+  Processing by Devise::PasswordsController#edit as HTML  
+  User Load (0.6ms)  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1  
+Redirected to http://localhost:3000/  
+Completed 302 Found in 309ms </code></pre>
+
+<p>Why is rails redirecting? Why can't I show the edit password page? Thanks
+<code>Devise::PasswordsController#edit</code> is for non-authenticated users who wish to change their password using a reset token. This reset token was previously sent to the user in an email (Reset password instructions). If the user is already logged in, this edit password page will always redirect to the after-sign-in path since it shouldn't be accessible to authenticated users.</p>
+
+<p>I suppose what you want is to allow the user to change his password after logging in. You have to use <code>Devise::RegistrationsController#edit</code> for that.</p>
+
+<p>#sometimes you will catch <code>You have already activated rack 1.3.0, but your Gemfile requires rack 1.2.3.</code>
+这是因为迩安装了多个rack版本、环境造成混乱、请卸载掉不需要的版本或者修改了Gemfile再执行一次bundle install</p>
+
+<h2>Fix by Francis</h2>
+
+<p><code>Lesstile::CodeRayFormatter</code>in lesstile not match with coderay 1.0.1
+install lesstile with plugin
+<code>rails plugin install git://github.com/xaviershay/lesstile.git</code>
+change lesstile.rb in 'vendor/plugins/lesstile/lib' as bellow:</p>
+
+<pre><code>
+    #CodeRay.scan(CGI::unescapeHTML(code), lang).html(:line_numbers =&gt; :table).div
+    CodeRay.scan(CGI::unescapeHTML(code), lang).div(:line_numbers =&gt; :table)
+</code></pre>
+
+<h2>add rvm in ubuntu</h2>
+
+<pre><code>
+#install Dependencies:
+sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
+sudo apt-get install ruby-rvm
+</code></pre>
+
+<h3>add rvm group to user</h3>
+
+<pre><code>jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a root rvm
+Adding user root to group rvm
+jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a jhjguxin rvm
+Adding user jhjguxin to group rvm
+jhjguxin@jhjguxin-virtual-machine:~$ sudo gpasswd -a www-data rvm
+Adding user www-data to group rvm</code></pre>
+
+<h3>add rvm to shell</h3>
+
+<p>vim ~/.bashrc
+[[ -s "/usr/share/ruby-rvm/scripts/rvm" ]] &amp;&amp; source /usr/share/ruby-rvm/scripts/rvm  # This loads RVM into a shell session.没有引号</p>
+
+<p>restart the shell opened</p>
+
+<p>If installation and configuration were successful, RVM should now load whenever you open a new shell. This can be tested by executing the following command which should output 'rvm is a function' as shown below.</p>
+
+<p>user$ type rvm | head -1
+rvm is a function</p>
+
+<p>RVM安装完成后，就可以通过TA来安装管理 Ruby 了。用下面一条命令来安装Ruby 1.9.2</p>
+
+<p>$  rvm install 1.9.2</p>
+
+<p>*Ruby包的下载实在太慢了，这里总是中断。有个小技巧，你可以用工具下载好ruby-1.9.2-p0.tar.bz2，然后手工放到~/.rvm/archives 目录下。然后再运行这条命令，就可以直接解压安装了。</p>
+
+<p>把该版本的Ruby设为默认</p>
+
+<p>rvm --help
+获得rvm的常用用法：</p>
+
+<p>rvm [Flags] [Options] Action [Implementation[,Implementation[,...]]
+rvm最常用的Action包括：</p>
+
+<p>对Ruby的操作
+主要包括读取，安装，卸载，更新，读取ruby等.</p>
+
+<p>读取远程可安装的Ruby版本
+#获得当前可以用的ruby版本
+rvm list known
+安装Ruby
+#安装其中的ruby1.9.2-p290
+rvm install ruby-1.9.2-p290
+使用
+#切换到刚刚安装的ruby1.9.2-p290版本
+rvm use ruby1.9.2-p290
+读取
+#列出当前rvm下的ruby版本
+rvm list
+#查询当前使用的ruby版本路径
+which ruby
+#获得当前ruby版本
+ruby -v
+输出rvm当前使用的ruby版本与gemset信息：
+rvm info
+在项目文件中使用RVM
+在自己的项目根目录下面，创建一个.rvmrc文件，里面内容可以指定ruby版本与gemset。例如，某项目根目录下面的.rvmrc文件内容如下：</p>
+
+<p>rvm ruby-1.9.2-p290@rails31
+这表示，该项目使用ruby1.9.2p290这个版本的ruby，gem安装在rails31下面。然后iterm的zsh或者bash；或者TextMate中的rubymate,rakemate；以及pow等工具就可以直接调用相应ruby版本与相应gemset。</p>
+
+<h2>rvm on ubuntu 11.10 install ruby 1.9.2 error</h2>
+
+<p>When trying to install ruby 1.9.2 using rvm I got a nasty suprise:</p>
+
+<pre><code>
+ossl_ssl.c:110:1: error: ‘SSLv2_method’ undeclared here (not in a function)
+ossl_ssl.c:111:1: error: ‘SSLv2_server_method’ undeclared here (not in a function)
+ossl_ssl.c:112:1: error: ‘SSLv2_client_method’ undeclared here (not in a function)
+make[1]: *** [ossl_ssl.o] Error 1
+make[1]: Leaving directory `/var/cache/ruby-rvm/src/ruby-1.9.2-p180/ext/openssl'
+make: *** [mkmain.sh] Error 1
+</code></pre>
+
+<p>The solution</p>
+
+<pre><code>
+sudo apt-get install ruby-rvm
+# make sure we have $rvm_path
+source /etc/profile
+# don't use ubuntus openssl
+rvm package install openssl
+rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
+</code></pre>
+
+<p>h2. Quickstart sunspot with Rails 3</p>
+
+<p>Add to Gemfile:</p>
+
+<pre><code>
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+</code></pre>
+
+<p>Bundle it!</p>
+
+<p><code>bundle install</code></p>
+
+<p>Generate a default configuration file:</p>
+
+<p><code>rails generate sunspot_rails:install</code></p>
+
+<p>If sunspot_solr was installed, start the packaged Solr distribution with:</p>
+
+<p><code>bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground</code></p>
+
+<p>Now that Sunspot knows how to index the Post model, we need to get the existing data into Solr. Any time a Post is created, updated, or destroyed, Sunspot::Rails will automatically make the change to the index; you only need to do a full reindex if you’ve added or changed a searchable definition for a model.</p>
+
+<p><code>$ rake sunspot:reindex</code></p>
+
+<p>If sunspot_solr was installed, start the packaged Solr distribution with:</p>
+
+<pre><code>
+jhjguxin@jhjguxin-Aspire-4750:~$ heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang#using on heroku
+or type:sunspot-solr start -- -p 8983 or sunspot-solr start -- -p 8983 -d data/solr/myapp
+</code></pre>
+
+<p>Try to start the solr</p>
+
+<p>Solr服务控制
+将以上内容添加到Rakefile后，将会多出4个task出来</p>
+
+<p>服务器启动:
+rake sunspot:solr:start
+初次启动，会安装一个embed的solr程序，那么开发环境中省去了安装配置Solr环境繁琐步骤。不过，production环境里可不要使用这个embed版。</p>
+
+<p>服务器停止:
+rake sunspot:solr:stop
+全部重建索引：
+rake sunspot:reindex
+如果你想看到运行日志，把服务跑在前端。可以使用一下命令:
+rake sunspot:solr:run
+使用以上命令，就能完成对Sunspot的控制。</p>
+
+<h3>when you get "RSolr::Error::Http (RSolr::Error::Http - 500 Internal Server Error</h3>
+
+<pre>
+<code>Error: Severe errors in solr configuration." in log
+please navigation to "localhost:8082/solr" check more info:
+there recomment method is
+ps -ef|grep solr
+kill all solr's process
+rm solr folder in enki root dir.reinstall the solr by type:
+#Generate a default configuration file:
+rails generate sunspot_rails:install
+</code>
+
+If sunspot_solr was installed, start the packaged Solr distribution with:
+
+<code>bundle exec rake sunspot:solr:start # or sunspot:solr:run to start in foreground</code>
+
+Now that Sunspot knows how to index the Post model, we need to get the existing data into Solr. Any time a Post is created, updated, or destroyed, Sunspot::Rails will automatically make the change to the index; you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
+
+<code>$ rake sunspot:reindex</code>
+</pre>
+
+<h2>the feature in the future</h2>
+
+<ol>
+<li>add reploy to reploy</li>
+<li>finish the permission control</li>
+<li>使用验证码</li>
+<li>Mention <a href="/somebody" class="user-mention">@somebody</a>. They're notified eg. When you <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username anywhere in the context of an issue or pull request, that person is notified and subscribed to future updates.</li>
+<li>@自动匹配用户名功能</li>
+</ol>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/jhjguxin" class="avatar"><img src="https://secure.gravatar.com/avatar/325f379acbce12eb76e0a42a97679127?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/jhjguxin">jhjguxin</a> maintains <a href="https://github.com/jhjguxin/enki">Enki</a></p>
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/jhjguxin/enki/tarball/master" class="tar">tar</a><a href="https://github.com/jhjguxin/enki/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
