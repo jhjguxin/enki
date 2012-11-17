@@ -1,8 +1,9 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 #gem 'rails', '3.0.4'
 #gem "rails", "~> 3.0.11"
-gem "rails", "~> 3.1.3"
+gem "rails", "~> 3.1.8"
 gem 'rake', '~> 0.9.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,7 +33,7 @@ gem 'twitter-bootstrap-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'ruby-debug'
+#gem 'ruby-debug' # for ruby 1.8
 
 # Bundle the extra gems:
 gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
@@ -50,7 +51,7 @@ gem 'cancan', '1.4.1'
 
 # paginate
 #gem 'will_paginate', '3.0.2'
-gem "rails_paginate", "~> 0.0.7"
+gem "rails_paginate", :git => 'git://github.com/phatworx/rails_paginate.git'
 
 gem "paperclip", "~> 2.0"
 gem 'jquery-rails', '1.0.12'
@@ -59,8 +60,8 @@ gem 'remotipart', '~> 1.0'
 #A thin and fast web server
 gem "thin", "~> 1.3.1"
 #git api
-gem "github_api", "~> 0.4.1"
-#The Exception Notifier plugin provides a mailer object and a default set of templates for sending email notifications when errors occur in a Rails application. 
+gem "github_api", "~> 0.4.10"
+#The Exception Notifier plugin provides a mailer object and a default set of templates for sending email notifications when errors occur in a Rails application.
 gem "exception_notification", "~> 2.5.2"
 
 # 全文搜索 sunspot 是一个java程序 在heroku中使用需要付费这里可以使用naive-search替代
@@ -69,7 +70,7 @@ gem 'sunspot_rails', "~> 1.3.0"
 #rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start
 #you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
 #rake sunspot:reindex
-gem "progress_bar", "~> 0.4.0"
+#gem "progress_bar", "~> 0.4.0"
 #heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang
 gem 'sunspot_solr'
 #gem "naive-search", "~> 0.1.8"
@@ -87,5 +88,16 @@ group :development, :test do
   gem 'factory_girl'
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'nokogiri', '~> 1.5.0'
+  #curl -OL http://rubyforge.org/frs/download.php/75414/linecache19-0.5.13.gem
+  #curl -OL http://rubyforge.org/frs/download.php/75414/linecache19-0.5.13.gem
+  #curl -OL http://rubyforge.org/frs/download.php/75415/ruby-debug-base19-0.11.26.gem
+  #gem install linecache19-0.5.13.gem -- --with-ruby-include="${MY_RUBY_HOME/rubies/src}"
+  #gem install ruby-debug-base19-0.11.26 -- --with-ruby-include="${MY_RUBY_HOME/rubies/src}"
+
+
+  #other case
+  #gem 'linecache19', :git => 'git://github.com/mark-moseley/linecache'
+  #gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
+  #gem 'ruby-debug19'
+
 end
