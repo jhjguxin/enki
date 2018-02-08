@@ -1,4 +1,10 @@
-
+/* High level containers */
+/*
+ *= require formtastic
+ *= require humanmsg
+ *= require_self
+ */
+ 
 #nav {
   position: absolute;
   width: 100%;

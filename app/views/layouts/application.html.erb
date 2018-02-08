@@ -4,12 +4,8 @@
   <meta charset="utf-8">
   <title><%= html_title yield(:page_title) %></title>
   <%= csrf_meta_tag %>
-  <%= stylesheet_link_tag "front" %>
-  <%= stylesheet_link_tag "topics" %>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'rails' %>
-  <%= javascript_include_tag 'tagcloud' %>
 
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= favicon_link_tag %>

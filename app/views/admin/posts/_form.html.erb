@@ -1,7 +1,3 @@
-<% content_for(:head) do -%>
-  <%= javascript_include_tag 'admin/edit-preview' %>
-<% end -%>
-
 <%= form.inputs :name => "Content" do -%>
   <%= form.input :title, :label => t("activerecord.attributes.post.title") -%>
   <%= form.input :body,:label => t('activerecord.attributes.post.body') , :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe -%>

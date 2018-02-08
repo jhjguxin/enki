@@ -1,15 +1,15 @@
-#source 'http://rubygems.org'
-source 'http://ruby.taobao.org/'
+source 'https://gems.ruby-china.org'
+ruby "2.5.0"
 
 #gem 'rails', '3.0.4'
 #gem "rails", "~> 3.0.11"
-gem "rails", "~> 3.1.8"
-gem 'rake', '~> 0.9.2.2'
+gem "rails", "~> 4.2.1"
+gem 'rake'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 platforms :ruby do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'sqlite3'
 end
 
 platforms :jruby do
@@ -18,14 +18,13 @@ platforms :jruby do
   gem 'jruby-openssl'
 end
 
-group :assets do
-  gem 'sass-rails', '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sprockets'
 
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -36,36 +35,42 @@ gem 'twitter-bootstrap-rails'
 #gem 'ruby-debug' # for ruby 1.8
 
 # Bundle the extra gems:
-gem 'RedCloth', '~> 4.2.7', :require => 'redcloth'
+gem 'RedCloth', :require => 'redcloth'
 gem 'ruby-openid', :require => 'openid'
+gem 'acts-as-taggable-on'
+gem 'gravatar_image_tag'
+gem 'lesstile'
 gem 'rack-openid', :require => 'rack/openid'
 gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
-gem "coderay", "~> 1.0.5"
+gem "coderay"
 #gem 'lesstile'
 gem 'formtastic'
 
-gem 'devise', '~> 1.5.3'
-gem "google-analytics-rails", "~> 0.0.1"
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-token_authenticatable'
+
+gem "google-analytics-rails"
 # permission
-gem 'cancan', '1.4.1'
+gem 'cancan'
 
 # paginate
 #gem 'will_paginate', '3.0.2'
-gem "rails_paginate", :git => 'git://github.com/phatworx/rails_paginate.git'
+gem "rails_paginate"
 
-gem "paperclip", "~> 2.0"
-gem 'jquery-rails', '1.0.12'
-gem 'remotipart', '~> 1.0'
+gem "paperclip"
+gem 'jquery-rails'
+gem 'remotipart'
 
 #A thin and fast web server
-gem "thin", "~> 1.3.1"
+gem "thin"
 #git api
-gem "github_api", "~> 0.4.10"
+gem "github_api"
 #The Exception Notifier plugin provides a mailer object and a default set of templates for sending email notifications when errors occur in a Rails application.
-gem "exception_notification", "~> 2.5.2"
+gem "exception_notification"
 
 # 全文搜索 sunspot 是一个java程序 在heroku中使用需要付费这里可以使用naive-search替代
-gem 'sunspot_rails', "~> 1.3.0"
+gem 'sunspot_rails'
 #if sunspot not running currected there will "Errno::ECONNREFUSED (Connection refused - connect(2)): "
 #rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start
 #you only need to do a full reindex if you’ve added or changed a searchable definition for a model.
@@ -73,19 +78,19 @@ gem 'sunspot_rails', "~> 1.3.0"
 #gem "progress_bar", "~> 0.4.0"
 #heroku run:detached rake sunspot:solr:start RAILS_ENV=production rake sunspot:solr:start --app francisjiang
 gem 'sunspot_solr'
-#gem "naive-search", "~> 0.1.8"
+
 #麵包屑
-gem "breadcrumbs", "~> 0.1.6"
+gem "breadcrumbs"
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
+group :test do
   gem 'cucumber-rails'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'webrat'
-  gem 'factory_girl'
+  gem 'factory_bot'
   gem 'rspec'
   gem 'rspec-rails'
   #curl -OL http://rubyforge.org/frs/download.php/75414/linecache19-0.5.13.gem

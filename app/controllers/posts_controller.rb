@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   #add_breadcrumb I18n.t("breadcrumbs.third"),  :third_path,  :only => %w(third)
   def index
     @tag = params[:tag]
-    @posts = Post.find_recent(:tag => @tag, :include => :tags).paginate params[:page]
+    @posts = Post.find_recent(:tag => @tag).includes(:tags).paginate params[:page]
 
 #    add_breadcrumb I18n.t("menu.posts"),  @index_path
     if not @tag.nil?

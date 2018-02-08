@@ -3,7 +3,7 @@ Enki::Application.routes.draw do
     devise_for :users
     resources :token_authentications, :only => [:create, :destroy]
 
-    match "/search" => "search#index", :as => :search
+    get "/search" => "search#index", :as => :search
 
     namespace 'admin' do
       #resource :session
@@ -14,9 +14,6 @@ Enki::Application.routes.draw do
       resources :undo_items do
         post 'undo', :on => :member
       end
-
-      match 'health(/:action)' => 'health', :action => 'index', :as => :health
-
       root :to => 'dashboard#show'
     end
 
@@ -37,7 +34,7 @@ Enki::Application.routes.draw do
 
     root :to => 'posts#index'
   end
-  match '/:locale' => 'posts#index'
+  get '/:locale' => 'posts#index'
   # config/routes.rb
   #scope "/:locale" do
     #resources :books

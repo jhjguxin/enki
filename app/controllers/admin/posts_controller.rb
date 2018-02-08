@@ -12,7 +12,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     (5 - @post.attachment.length).times { @post.attachment.build }
     @post.user=current_user
 
@@ -34,7 +34,7 @@ class Admin::PostsController < Admin::BaseController
 
   def update
     #breakpoint
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       delete_empty_attachment
       respond_to do |format|
         format.html {
@@ -67,8 +67,8 @@ class Admin::PostsController < Admin::BaseController
 
   def preview
     #delete_empty_attachment
-    params[:post][:attachment_attributes]=[]
-    @post = Post.build_for_preview(params[:post])
+    post_params[:attachment_attributes]=[]
+    @post = Post.build_for_preview(post_params)
 
     @post.user=current_user
 
@@ -98,7 +98,14 @@ class Admin::PostsController < Admin::BaseController
     end
   end
 
-  protected
+  private
+  def post_params
+    params.require(:post).permit(
+      :title, :body, :tag_list,
+      :published_at_natural,
+      :slug
+    )
+  end
   def delete_empty_attachment
     @post.attachment.each do |a|
       if a.image_file_name==nil

@@ -3,12 +3,12 @@ module NavigationHelper
     link = Struct.new(:name, :url)
     [link.new(I18n.t("breadcrumbs.homepage"), root_path),
      link.new(I18n.t("menu.archives"), archives_path)] +
-      Page.find(:all, :order => 'title').collect {|page| link.new(page.title, page_path(page.slug))}
+      Page.all.collect {|page| link.new(page.title, page_path(page.slug))}
   end
 
   def category_links_for_navigation
     link = Struct.new(:name, :url,:class,:rel)
-    @popular_tags ||= Tag.find(:all).reject {|tag| tag.taggings.empty? }.sort_by {|tag| tag.taggings.size }.reverse
+    @popular_tags ||= Tag.all.reject {|tag| tag.taggings.empty? }.sort_by {|tag| tag.taggings.size }.reverse
     #@popular_tags.collect {|tag| link.new("%s(%d)" % [tag.name,tag.taggings_count], posts_path(:tag => tag.name),tag.taggings_count.to_s) }
     #breakpoint
     @popular_tags.collect {|tag| link.new(tag.name,posts_path(:tag => tag.name),"%d in tag '%s'" % [tag.taggings_count,tag.name],tag.taggings_count) }

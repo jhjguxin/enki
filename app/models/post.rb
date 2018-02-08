@@ -61,7 +61,7 @@ class Post < ActiveRecord::Base
       if tag
         find_tagged_with(tag, options)
       else
-        find(:all, options)
+        all
       end
     end
 

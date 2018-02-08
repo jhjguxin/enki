@@ -69,29 +69,6 @@ class InitializeDb < ActiveRecord::Migration
     add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
     add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
 
-    create_table "taggings" do |t|
-      #t.integer  "tag_id"
-      #t.integer  "taggable_id"
-      #t.datetime "created_at"
-      t.integer  "tag_id"
-      t.integer  "taggable_id"
-      t.string   "taggable_type"
-      t.integer  "tagger_id"
-      t.string   "tagger_type"
-      t.datetime "created_at"
-
-    end
-
-    add_index "taggings", ["taggable_id"], :name =>"index_taggings_on_taggable_id_and_taggable_type"
-    add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-
-    create_table "tags" do |t|
-      t.string  "name"
-      t.integer "taggings_count", :default => 0, :null => false
-    end
-
-    add_index "tags", ["name"], :name => "index_tags_on_name"
-
     create_table "undo_items" do |t|
       t.string   "type",       :null => false
       t.datetime "created_at", :null => false

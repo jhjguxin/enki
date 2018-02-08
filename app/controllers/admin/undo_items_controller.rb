@@ -1,9 +1,6 @@
 class Admin::UndoItemsController < Admin::BaseController
   def index
-    @undo_items = UndoItem.find(:all,
-      :order => 'created_at DESC',
-      :limit => 50
-    )
+    @undo_items = UndoItem.order(id: :desc).limit("50")
   end
 
   def undo
