@@ -1,7 +1,6 @@
 Enki::Application.routes.draw do
   scope "(:locale)", :locale => /en|zh-CN/ do
     devise_for :users
-    resources :token_authentications, :only => [:create, :destroy]
 
     get "/search" => "search#index", :as => :search
 
